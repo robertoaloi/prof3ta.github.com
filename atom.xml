@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[Roberto Aloi]]></title>
   <link href="http://prof3ta.github.com/atom.xml" rel="self"/>
   <link href="http://prof3ta.github.com/"/>
-  <updated>2012-07-19T17:48:22+02:00</updated>
+  <updated>2012-07-19T17:51:00+02:00</updated>
   <id>http://prof3ta.github.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Roberto Aloi]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>

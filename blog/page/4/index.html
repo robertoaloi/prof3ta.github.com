@@ -1,0 +1,691 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Roberto Aloi</title>
+  <meta name="author" content="Roberto Aloi">
+
+  
+  <meta name="description" content="Sometimes you need to recursively set a specific UNIX permission for a whole set of files and/or directories. And you want to have a different &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://prof3ta.github.com/blog/page/4/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Roberto Aloi" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Roberto Aloi</a></h1>
+  
+    <h2>Software Engineer, Erlang Passionate, Father.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:prof3ta.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/languagesintheworld">Languages In The World</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/12/04/how-to-set-up-unix-permission-for-files-and-directories/">How to Set Up UNIX Permission for Files and Directories. Cleverly.</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-04T00:00:00+01:00" pubdate data-updated="true">Dec 4<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><a href="http://aloiroberto.files.wordpress.com/2009/12/bsd-linux-devil.jpg"><img class="aligncenter size-medium wp-image-160" title="BSD Devil" src="http://aloiroberto.files.wordpress.com/2009/12/bsd-linux-devil.jpg?w=300" alt="" width="300" height="225" /></a>
+
+Sometimes you need to recursively set a specific UNIX permission for a whole set of files and/or directories. And you want to have a different permission for your <strong>files</strong> and for your <strong>directories</strong>.
+
+For example, when installing a CMS like Joomla (or Moodle), you might want to recursively set the UNIX permissions to <strong>700</strong> for all the <strong>directories</strong> contained in your <strong>web root</strong> (say, your <em>htdocs</em>). And you want to do the same for all the <strong>files</strong>, but this time to <strong>600</strong>.
+
+This can easily be achieved by entering your <strong>htdocs</strong> and by using the <strong>find</strong> command:
+<pre>find . -type d -exec chmod 700 {} +
+find . -type f -exec chmod 600 {} +</pre>
+The commands should be read as follows:
+
+&#8220;Read everything in the current directory, recursively. For every single item that is of type <em>directory </em>(<em>file</em>) change permissions to <em>700 </em>(<em>600</em>).&#8221;
+
+The <em>{} + </em>option (refer to the find <strong>man</strong> page) runs the specified  command  on	      the  selected  files, but the command line is built by appending	      each selected file name at the end.
+
+More information about UNIX permissions <a href="http://en.wikipedia.org/wiki/File_system_permissions" target="_blank">here</a>.
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/11/28/time-out-s-101-films-of-the-decade/">Time Out&#8217;s 101 Films of the Decade</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-11-28T00:00:00+01:00" pubdate data-updated="true">Nov 28<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><a href="http://www.timeout.com/film/features/show-feature/9232/" target="_blank"><img class="aligncenter size-full wp-image-148" title="Time Out Logo" src="http://aloiroberto.files.wordpress.com/2009/11/to_logo132x90.gif" alt="" width="132" height="90" /></a>
+
+Time Out has just released the list of the 101 films of the decade. Browse the list and run to see the ones you&#8217;re still missing&#8230; :)
+
+Here&#8217;s reported the top ten:
+<ol>
+	<li>In the Mood for Love (2000)</li>
+	<li>Hidden (2005)</li>
+	<li>Spirited Away (2001)</li>
+	<li>There Will Be Blood (2007)</li>
+	<li>The lives of the Others (2006)</li>
+	<li>The Assassination of Jesse James by the Coward Robert Ford (2007)</li>
+	<li>Talk to Her (2002)</li>
+	<li>Far From Heaven (2002)</li>
+	<li>No Country for Old Men (2007)</li>
+	<li>Ten (2002, Iran/Fr)</li>
+</ol>
+Just as a note, the only Italian movie included in the list (31st place) is <em>The Son&#8217;s Room</em> (2001, It/Fr), directed by Nanni Moretti.
+
+The full list of the 101 films of the decade is available <a href="http://www.timeout.com/film/features/show-feature/9232/" target="_blank">here</a>.
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/11/09/erlang-certification-survey/">Erlang Certification Survey</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-11-09T00:00:00+01:00" pubdate data-updated="true">Nov 9<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p style="text-align:center;"><a href="http://aloiroberto.files.wordpress.com/2009/11/erlang-logo.png"><img class="aligncenter size-full wp-image-145" title="Erlang" src="http://aloiroberto.files.wordpress.com/2009/11/erlang-logo.png" alt="Erlang Logo" width="156" height="135" /></a></p>
+Erlang Training and Consulting Ltd in conjunction with the University of Kent intends to launch a pilot version of an e-certification platform for Erlang in the near future.
+
+To assist in this process, we have launched a survey on Erlang Certification. The objective of the study is to better understand the expectations of users, in order to ensure a well-focused product.
+
+We would appreciate a few minutes of your time in completing this survey. To take the survey, please go to:
+
+<a href="http://surveys.erlang-consulting.com/index.php?sid=21265&amp;lang=en">http://surveys.erlang-consulting.com/index.php?sid=21265&amp;lang=en</a>
+
+The results of the survey will be shared with third parties, in publications and as part of research into Certification. When doing so, all results will be completely anonymised and any individual-identifying information removed.
+
+Thank you for your time and cooperation.
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/10/17/php-from-command-line/">Php From Command Line</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-10-17T00:00:00+02:00" pubdate data-updated="true">Oct 17<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">A really simple, still useful tip for php developers.
+
+It is possible to execute a php command directly from the command line by doing the following:
+
+<code>php -r 'COMMAND'</code>
+
+For example:
+
+<code>php -r 'echo substr("hello world", 6);'</code>
+
+Enjoy!
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/10/17/new-versions-for-joomla-picasa-and-joomla-flickr/">New &#8220;Joomla! Picasa&#8221; and &#8220;Joomla! Flickr&#8221;</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-10-17T00:00:00+02:00" pubdate data-updated="true">Oct 17<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Hello people,
+
+a couple of years ago I wrote a beta version of the two Joomla! components <a href="http://extensions.joomla.org/extensions/3809/details" target="_blank">&#8220;Joomla! Picasa&#8221;</a> and <a href="http://extensions.joomla.org/extensions/external-contents/photo-channels/3999" target="_blank">&#8220;Joomla! Flickr&#8221;</a>. In the past two years, the two packages have been downloaded and tried more than 70.000 times, generating lot of interest and discussions, even in their early stage of development.
+
+I&#8217;m now going to completely rewrite them, to keep them competitive in the growing market of Joomla! extensions. The two components are obviously going to be <strong>completely free and open source</strong>.
+
+Before I start developing again, I&#8217;d like you all to discuss with me the features that you would like to be implemented and what you DON&#8217;T want to be included in the packages. I will then start two fresh open source projects for them and all contribution will be welcome.
+
+Ready for a new version of the two photogallery? Start proposing, adding comments to this post, then&#8230;
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/10/17/essential-free-software-for-mac/">Essential Free Software for Mac</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-10-17T00:00:00+02:00" pubdate data-updated="true">Oct 17<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">This is a list of essential free software for Mac, according to the author (ongoing process):
+<ul>
+	<li>Growl</li>
+	<li> uTorrent</li>
+	<li> Emacs</li>
+	<li> Skype</li>
+	<li> Firefox</li>
+	<li> Inkscape</li>
+	<li> VLC</li>
+	<li> Spotify</li>
+	<li> OpenOffice</li>
+	<li> iScrobbler</li>
+	<li>Dropdown</li>
+	<li>Evernote</li>
+</ul>
+Feel free to comment / add your favourite software (FREE, not already included in Mac OS X).
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/10/07/erlang-quickcheck-design-patterns-black-box/">Erlang Quickcheck Design Patterns - Black Box</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-10-07T00:00:00+02:00" pubdate data-updated="true">Oct 7<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><strong>Name</strong>
+Black Box
+
+<strong>Also Known As</strong>
+ETS Driven Testing
+
+<strong>Intent</strong>
+When writing <em>Quickcheck</em> <strong>unit tests</strong> for an Erlang application, it usually happens that you require to stub some external application, since you&#8217;re not interested in <strong>System Tests</strong>, but you want to test your application as a mere <em>black box</em>.
+
+<strong>Motivation</strong>
+You want complete control on the results provided by your stubs, so that you can successfully check the properties you need for your application.
+
+<strong>Sample Code</strong>
+
+In your quickcheck module, just define in your state the results you need, together with their default value:
+
+<pre>-record(state, {stub_result = true}).</pre>
+
+Define the initial state as follows:
+
+<pre>
+initial_state() -&gt;
+    init.
+
+initial_state_data() -&gt;
+    #state{}.
+</pre>
+
+In your property, create an ETS table containing the results (don&#8217;t forget to delete it after running the tests) and call the <em>run_commands</em> function by passing an extra parameter:
+
+<pre>
+prop_commands() -&gt;
+    ?FORALL({Cmds, State}, custom_commands(),
+            ?TRAPEXIT(begin
+                          results = ets:new(results, [named_table, set, public]),
+                          ets:insert(results, {stub_result, State#state.stub_result}),
+                          {H,S,Res} = eqc_fsm:run_commands(?MODULE, Cmds, [{var, stub_result}]),
+                          true = ets:delete(results),
+                          ...
+</pre>
+
+The <em>custom_commands</em> function is the place where you set the list of available results:
+<pre>
+custom_commands() -&gt;
+    ?LET(State,
+         #state{stub_result = oneof([true, false])},
+         {more_commands(100, eqc_fsm:commands(?MODULE, {init, State})), State}).
+</pre>
+
+You can check the result in your postconditions, as follows:
+<pre>
+postcondition(_From, _To, S, {call, _, _, _}, R) -&gt;
+    S#state.stub_result == R.
+</pre>
+
+Obviously, your stubs need to contain something like:
+<pre>
+stubbed_function() -&gt;
+    ets:lookup_element(results, stub_result, 2).
+</pre>
+
+<strong>Consequences</strong>
+Your tests will be able to cover a bigger number of code lines (<a target="_blank" href="http://en.wikipedia.org/wiki/Lemmings_(video_game)">lemmings</a>).
+
+<strong>Thanks</strong>
+Thanks to <em>Master</em> Magnus Henoch for his help.
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/09/23/london-design-festival/">London Design Festival</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-23T00:00:00+02:00" pubdate data-updated="true">Sep 23<span>rd</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">I spent a lovely weekend in London, enjoying the Open House Weekend and the Design Festival.
+<a href="http://www.flickr.com/photos/roberto-aloi/sets/72157622303042355/">Here</a> are some of the photos I took.
+
+<a href="http://www.flickr.com/photos/roberto-aloi/3941953521/" title="The Arc di - Roberto Aloi -, su Flickr"><img src="http://farm3.static.flickr.com/2530/3941953521_af310f02de.jpg" width="500" height="333" alt="The Arc" /></a>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/09/16/mercurial-verbose-pull/">Mercurial - Verbose Pull</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-16T00:00:00+02:00" pubdate data-updated="true">Sep 16<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Are you pulling from a Mercurial repository and it&#8217;s taking too long?
+
+Do you want to know which files are being pulled into your local machine?
+
+Did you try <code>hg --verbose pull</code> and it didn&#8217;t help?
+
+Then, try the following:
+
+<code>hg --debug -v pull</code>
+
+Cheers.
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/09/16/mercurial-gnome-keyring-integration/">Mercurial - Gnome Keyring Integration</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-16T00:00:00+02:00" pubdate data-updated="true">Sep 16<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">I don&#8217;t know about you, but I was really bored about inserting my password again and again when pulling hg based projects.
+
+Since I&#8217;m using Gnome, I decided to check if it was possible to integrate Mercurial with the Gnome Keyring.
+
+Guess what:
+
+<code>http://bitbucket.org/ebo/hggnome-keyring/changeset/4f8cbce98fe6/</code>
+
+Just download the extension and install it, by adding the following line under [extensions] in your .hgrc file:
+
+<code>hggnome-keyring = [PATH_TO_EXTENSION]/hggnome-keyring.py</code>
+
+When pulling from a hg repo, the system will prompt you for the password just for the first time :)
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/5/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/3/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/04/18/domain-renewal-group-fraud/">Domain Renewal Group Fraud</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/12/11/the-growth-of-erlang-the-stack-overflow-case-study/">The growth of Erlang: The Stack Overflow Case Study</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/11/24/how-to-manage-multiple-erlang-installations/">How to manage multiple Erlang installations</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/10/14/how-they-tried-to-fool-tryerlang-org/">How they tried to fool tryerlang.org</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/10/09/pair-programming/">Pair Programming</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("robertoaloi", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/robertoaloi" class="twitter-follow-button" data-show-count="false">Follow @robertoaloi</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Roberto Aloi -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

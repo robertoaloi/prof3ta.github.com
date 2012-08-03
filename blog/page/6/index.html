@@ -1,0 +1,553 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Roberto Aloi</title>
+  <meta name="author" content="Roberto Aloi">
+
+  
+  <meta name="description" content="If you want to run a shell command within Emacs, you can simply type: M-! If you want to include the output into the current buffer, then: C-u M-! ">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://prof3ta.github.com/blog/page/6/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Roberto Aloi" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Roberto Aloi</a></h1>
+  
+    <h2>Software Engineer, Erlang Passionate, Father.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:prof3ta.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/languagesintheworld">Languages In The World</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/02/26/running-shell-commands-within-emacs/">Running Shell Commands Within Emacs</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-02-26T00:00:00+01:00" pubdate data-updated="true">Feb 26<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">If you want to run a shell command within Emacs, you can simply type:
+<code>M-!</code>
+If you want to include the output into the current buffer, then:
+<code>C-u M-!</code>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/02/26/it-comics-lisp-keyboard-prototype/">IT Comics - Lisp Keyboard Prototype</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-02-26T00:00:00+01:00" pubdate data-updated="true">Feb 26<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><img class="aligncenter size-full wp-image-36" title="lisp-keyboard" src="http://aloiroberto.files.wordpress.com/2009/02/lisp-keyboard.png" alt="lisp-keyboard" width="300" height="261" />
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/02/25/etc-comics-testing-suite/">ETC Comics - Testing Suite</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-02-25T00:00:00+01:00" pubdate data-updated="true">Feb 25<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><img class="aligncenter size-full wp-image-31" title="00001-testingsuite1" src="http://aloiroberto.files.wordpress.com/2009/02/00001-testingsuite1.png" alt="00001-testingsuite1" width="300" height="203" />
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/02/23/tracing-erlang-functions/">Tracing Erlang Functions</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-02-23T00:00:00+01:00" pubdate data-updated="true">Feb 23<span>rd</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Tracing Erlang functions for debugging purposes is probably simpler than you could even imagine. Let say you have the following module and you want trace one of its functions.
+
+<code>
+-module(math).
+-export([sum/2, diff/2]).
+
+sum(A, B) -&gt; A + B.
+diff(A, B) -&gt; A - B.
+</code>
+
+Just start the tracer:
+<code>&gt; dbg:tracer()</code>
+
+Say the tracer that you are interested in all calls for all processes:
+<code>&gt; dbg:p(all, c)</code>
+
+Finally, say it that you want to trace the function <strong>sum</strong> from the module <strong>math</strong>:
+ <code>&gt; dbg:tpl(math, sum, [])</code>
+
+Now, try to call the function, as usual. The tracer is active!
+<code>&gt; math:sum(2, 3).</code>
+
+To stop the trace:
+<code>&gt; dbg:stop().</code>
+
+To trace all the functions within the module <strong>math</strong>:
+<code>&gt; dbg:tpl(math, [])</code>
+
+To trace the return value for a given function:
+<code>&gt; dbg:tpl(math, sum, dbg:fun2ms(fun(_) -&gt; return_trace() end)).</code>
+
+For more information, refer to the official documentation of the <a href="http://erlang.org/doc/man/dbg.html" target="_blank">Erlang <strong>dbg</strong> module</a>.
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/02/20/toggle-in-emacs/">Swapping in Emacs</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-02-20T00:00:00+01:00" pubdate data-updated="true">Feb 20<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Here are some very useful tips for Emacs, regarding swapping.
+
+<strong>SWAP WORDS:</strong>
+If you have a text like the following and you want to change the order of the parameters for the foo function:
+<code>
+foo(First, Second) -&gt;;
+    ok.
+</code>
+Just put the cursor on the comma or on the space between First and Second and press:
+<code>M-t</code>
+
+You will get the following:
+<code>
+foo(Second, First) -&gt;;
+    ok.
+</code>
+
+<strong>SWAP LINES:</strong>
+Start from:
+<code>First Line
+Second Line</code>
+
+Put the cursor at the beginning of the second line and press:
+<code>C-x C-t</code>
+
+You will get:
+<code>
+Second Line
+First Line
+</code>
+
+Easy, right? :)
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/02/20/the-vnumber-function-in-erlang/">The v(Number) Function in Erlang</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-02-20T00:00:00+01:00" pubdate data-updated="true">Feb 20<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Maybe, someone of you doesn&#8217;t still know about the existence of the Erlang function v(Number).
+You can use this function within an Erlang shell and it will return the value for the <em>Number</em>-th line of the shell.
+For example:
+<code>
+Eshell V5.6.5  (abort with ^G)
+1&gt; 2 * 2.
+4
+2&gt; v(1).
+4
+3&gt; 
+</code>
+I found this function really useful many times, especially when managing with databases and records.
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/02/20/macros-in-emacs/">Macros in Emacs</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-02-20T00:00:00+01:00" pubdate data-updated="true">Feb 20<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">You can start recording a keyboard macro by typing:
+<code>C-x (</code>
+
+Do whatever you want and stop recording with:
+<code>C-x )</code>
+
+Then, you can select a region and type:
+<code>C-x C-k r</code>
+
+To apply the macro to the selected region.
+Emacs Macros are a really powerful tool. Just think if you need to prepone/postpone a string to a group of lines, for example from:
+
+<code>First Line
+Second Line
+Third Line</code>
+
+To:
+
+<code><li>First Line</li>
+<li>Second Line</li>
+<li>Third Line</li></code>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/02/19/svn-commit-from-emacs/">SVN Commit From Emacs</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-02-19T00:00:00+01:00" pubdate data-updated="true">Feb 19<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">To commit a single file directly from Emacs, just:
+<ul>
+	<li><code>C-x v v</code></li>
+	<li>Add a comment</li>
+	<li>C-c C-c</li>
+</ul>
+
+
+
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/5/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/04/18/domain-renewal-group-fraud/">Domain Renewal Group Fraud</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/12/11/the-growth-of-erlang-the-stack-overflow-case-study/">The growth of Erlang: The Stack Overflow Case Study</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/11/24/how-to-manage-multiple-erlang-installations/">How to manage multiple Erlang installations</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/10/14/how-they-tried-to-fool-tryerlang-org/">How they tried to fool tryerlang.org</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/10/09/pair-programming/">Pair Programming</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("robertoaloi", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/robertoaloi" class="twitter-follow-button" data-show-count="false">Follow @robertoaloi</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Roberto Aloi -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

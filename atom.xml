@@ -4,7 +4,7 @@
   <title><![CDATA[Roberto Aloi]]></title>
   <link href="http://prof3ta.github.com/atom.xml" rel="self"/>
   <link href="http://prof3ta.github.com/"/>
-  <updated>2012-07-19T17:51:00+02:00</updated>
+  <updated>2012-08-03T10:44:53+02:00</updated>
   <id>http://prof3ta.github.com/</id>
   <author>
     <name><![CDATA[Roberto Aloi]]></name>
@@ -12,5 +12,627 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Domain Renewal Group Fraud]]></title>
+    <link href="http://prof3ta.github.com/blog/2011/04/18/domain-renewal-group-fraud/"/>
+    <updated>2011-04-18T00:00:00+02:00</updated>
+    <id>http://prof3ta.github.com/blog/2011/04/18/domain-renewal-group-fraud</id>
+    <content type="html"><![CDATA[A couple of days ago the following letter has been delivered to my British postal address.
+
+[caption id=&#8221;attachment_481&#8221; align=&#8221;aligncenter&#8221; width=&#8221;225&#8221; caption=&#8221;Domain Renewal Group Fraud Letter&#8221;]<a href="http://aloiroberto.files.wordpress.com/2011/04/domain-fraud.png"><img class="size-medium wp-image-481" title="Domain Renewal Group Fraud Letter" src="http://aloiroberto.files.wordpress.com/2011/04/domain-fraud.png?w=225" alt="Domain Renewal Group Fraud Letter" width="225" height="300" /></a>[/caption]
+<p style="text-align:justify;">A quick glance to the letter on my way to work pushed me to write this blog post. The so-called &#8220;Domain Renewal Group&#8221;, sender of the above letter, seems to have a quite interesting business model, in fact. Just, it looks a bit fraudolent to me. Let&#8217;s see what they do in detail.</p>
+<p style="text-align:justify;">First of all, the group performs a <a href="http://en.wikipedia.org/wiki/Whois">whois</a> on a series of expiring web domains, extracting the postal address of the domain holders. Using that information for commercial purposes is illegal according to the terms of use of whois, which explicitely prohibits the use of the WHOIS data &#8220;for advertising, direct marketing, marketing research, or similar purposes&#8221;. A couple of months before the domain expires, the group sends the domain holders a copy of the above letter, which they define - in bold - a &#8220;courtesy to domain name holders&#8221; and a &#8220;reminder that your domain name registration is due to expire in the next few months&#8221;. The domain holder might think it&#8217;s his own hosting provider who is sending the reminder. Actuallly, the domain holder has never registered the domain with this Company. In fact, he has never used their services before. The letter is actually <strong>not</strong> a domain renewal form - as you would suppose - but a request of domain transfer from your current Registrar to a completely new service provider - i.e. the &#8220;Domain Renewal Group&#8221; -. They even dare to insert a &#8220;Reply requested by&#8221; date on the top of the letter. To perform the payment, there&#8217;s even a stub that you can use to fill in your credit card details - how easy - and to send them the request of service in a pre-stamped envelope. Very kind of them.</p>
+<p style="text-align:justify;">Dear Domain Renewal Group, I&#8217;m looking forward to the day when users will start typing your name in Google, having the term &#8220;fraud&#8221; suggested.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The growth of Erlang: The Stack Overflow Case Study]]></title>
+    <link href="http://prof3ta.github.com/blog/2010/12/11/the-growth-of-erlang-the-stack-overflow-case-study/"/>
+    <updated>2010-12-11T00:00:00+01:00</updated>
+    <id>http://prof3ta.github.com/blog/2010/12/11/the-growth-of-erlang-the-stack-overflow-case-study</id>
+    <content type="html"><![CDATA[One of the most popular technical <em>Questions and Answers</em> (Q&amp;A) websites is nowadays represented by <a href="http://www.stackoverflow.com">Stack Overflow</a>. <span style="font-size:15px;">Compared to a more traditional mailing list, it provides different advantages:</span>
+<ul>
+	<li>More structured information</li>
+	<li>Focus on the problem/issue</li>
+	<li>Information easier to find</li>
+	<li>Threads easier to follow</li>
+	<li>Concept of reputation (most active users &#8220;rewarded&#8221;)</li>
+	<li>Up/Down votes</li>
+	<li>Etc.</li>
+</ul>
+I&#8217;m not suggesting that Stack Overflow should exclusively replace every existing mailing list. I rather feel that the two tools may coexist, with different purposes.
+<ul>
+	<li><span style="font-size:15.6px;">Technical problem/issue -&gt; Stack Overflow</span></li>
+	<li><span style="font-size:15.6px;">Open discussion -&gt; Mailing list </span></li>
+</ul>
+<span style="font-size:15px;">Recently, I&#8217;ve noticed an increased number of posts tagged <em>Erlang</em> on Stack Overflow. I then asked myself:</span>
+<ol>
+	<li><span style="font-size:15px;">How Erlang is growing on Stack Overflow?</span></li>
+	<li><span style="font-size:15px;">How the Stack Overflow growth is affecting the Erlang mailing list?</span></li>
+	<li><span style="font-size:15px;">How Erlang is growing on Stack Overflow in relation to the major (read, most popular) languages (such as C++, Java or PHP)?</span></li>
+	<li><span style="font-size:15px;">How Erlang is growing on Stack Overflow in relation to languages such as Scala, Haskell or Go?</span></li>
+</ol>
+Then, I&#8217;ve tried to give ananswer to all of these questions.
+<h2>How Erlang is growing on Stack Overflow?</h2>
+Probably you don&#8217;t know, but there is a website (<a href="http://odata.stackexchange.com">odata.stackexchange.com</a>), which allows you to run arbitrary SQL queries on the Stack Exchange family of sites, of which Stack Overflow is part. Well, I decided to write my first query, asking Stack Overflow about the trend of posts tagged <em>Erlang </em>over time. The query is parametrical and can be used to check the trend of <em>any</em> tag on Stack Overflow. Also, since my SQL Server skills honestly suck, you are very welcome to edit and to make more efficient <a href="http://data.stackexchange.com/stackoverflow/s/708/how-many-posts-per-month-for-a-tag">my query</a>.
+
+The charted results of the query run for the Erlang tag look more or less like this:
+
+<a href="http://aloiroberto.files.wordpress.com/2010/12/screen-shot-2010-12-11-at-2-40-55-pm1.png"><img class="aligncenter size-full wp-image-459" title="Erlang Posts on Stack Overfow" src="http://aloiroberto.files.wordpress.com/2010/12/screen-shot-2010-12-11-at-2-40-55-pm1.png" alt="Erlang Posts on Stack Overfow" width="540" height="320" /></a>
+
+Where the x-axis ranges from August 2008 to October 2010.
+<h2>How the Stack Overflow growth is affecting the Erlang mailing list?</h2>
+<a title="Gmane" href="www.gmane.org">Gmane</a> offers a whole set services related to mailing lists. Among these, it provides some really interesting statistics on the mailing list usage. The following graphs report the messages and the participants per day for the Erlang General mailing list for the past few years. You can find more details <a href="http://gmane.org/details.php?group=gmane.comp.lang.erlang.general">here</a>.
+
+<a href="http://aloiroberto.files.wordpress.com/2010/12/screen-shot-2010-12-11-at-2-50-46-pm.png"><img class="aligncenter size-full wp-image-460" title="Activity on the Erlang General Mailing List" src="http://aloiroberto.files.wordpress.com/2010/12/screen-shot-2010-12-11-at-2-50-46-pm.png" alt="" width="507" height="326" /></a>
+
+To a very first analysis, it seems that the recent growth of Stack Overflow didn&#8217;t affect too much the Erlang mailing list, even if you can notice a tiny decrease in the mailing list usage in the final section of the graph (period 2008/2009). It sounds obvious how Stack Overflow shouldn&#8217;t be seen as the unique possible affecter of the mailing list usage.
+<h2>How Erlang is growing on Stack Overflow in relation to the major (read, most popular) languages (such as C++, Java or PHP)?</h2>
+A graph is worth a billion words.
+
+<a href="http://aloiroberto.files.wordpress.com/2010/12/screen-shot-2010-12-11-at-3-11-55-pm.png"><img class="aligncenter size-full wp-image-464" title="Erlang VS C++, Java and PHP" src="http://aloiroberto.files.wordpress.com/2010/12/screen-shot-2010-12-11-at-3-11-55-pm.png" alt="Erlang VS C++, Java and PHP" width="540" height="320" /></a>
+<h2>How Erlang is growing on Stack Overflow in relation to languages such as Scala or Haskell?</h2>
+<a href="http://aloiroberto.files.wordpress.com/2010/12/screen-shot-2010-12-11-at-3-11-18-pm.png"><img class="aligncenter size-full wp-image-465" title="Erlang VS Scala, Haskell and Go" src="http://aloiroberto.files.wordpress.com/2010/12/screen-shot-2010-12-11-at-3-11-18-pm.png" alt="Erlang VS Scala, Haskell and Go" width="540" height="319" /></a>
+<h2>Conclusions</h2>
+Comparing Erlang with the major languages such as PHP, C++ or Java is probably a bit <em>unfair</em>. I just hope you enjoyed reading this simple case study as much as I enjoyed writing it. <span style="font-size:15.6px;">Feel free to play with my query. Comments and opinions are always welcome.</span>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to manage multiple Erlang installations]]></title>
+    <link href="http://prof3ta.github.com/blog/2010/11/24/how-to-manage-multiple-erlang-installations/"/>
+    <updated>2010-11-24T00:00:00+01:00</updated>
+    <id>http://prof3ta.github.com/blog/2010/11/24/how-to-manage-multiple-erlang-installations</id>
+    <content type="html"><![CDATA[<p style="text-align:justify;">Sometimes you need to use different Erlang versions for different projects. I personally have to use an old R12B-5 for one of my projects, which won&#8217;t compile on any of the latest Erlang versions. The question is then:</p>
+
+<blockquote>
+<p style="text-align:justify;">How to switch from one version of Erlang to another one in a simple way?</p>
+</blockquote>
+<p style="text-align:justify;">There are no magics behind what I&#8217;m going to say in this post. Actually, this post will sound quite trivial to most of you. I simply wanted to share what I currently do with the ones of you who might have the same need. I&#8217;m using Snow Leopard, but all of the above should apply to any UNIX-like system. Also, I assume you&#8217;re fine with installing Erlang from source.</p>
+<p style="text-align:justify;">Assume you have two separate Erlang installations in your home directory:</p>
+
+<blockquote>~/erlang13b04
+
+~/erlang14a</blockquote>
+Notice that you can specify the installation path of Erlang by selecting, at installation time:
+<blockquote>./configure &#8211;prefix=YOUR_INSTALLATION_PATH</blockquote>
+<p style="text-align:justify;">First of all, let&#8217;s edit our ~/.bashrc, by adding the following line:</p>
+
+<blockquote>[source language=&#8221;shell&#8221;]
+
+PATH=$PATH:$HOME/bin
+
+[/source]</blockquote>
+<p style="text-align:justify;">Then, let&#8217;s create the bin folder under the home directory:</p>
+
+<blockquote>mkdir $HOME/bin</blockquote>
+<p style="text-align:justify;">Let&#8217;s now create some scripts in the directory we&#8217;ve just created. We will need one script for each installation we want to use.</p>
+<p style="text-align:justify;">Let&#8217;s create a file called &#8220;13&#8221; (no extension). Inside the file, we write:</p>
+
+[source language=&#8221;bash&#8221;]
+
+#!/bin/bash
+env PATH=/User/[USERNAME]/erlang13b04/bin:$PATH &quot;$@&quot;
+
+[/source]
+<p style="text-align:justify;">Let&#8217;s then do the same for R14. Create a file named &#8220;14&#8221; and write the following into it:</p>
+
+[source language=&#8221;bash&#8221;]
+
+#!/bin/bash
+env PATH=/User/[USERNAME]/erlang14a/bin:$PATH &quot;$@&quot;
+
+[/source]
+<p style="text-align:justify;">Make the two script executable:</p>
+
+<blockquote>cd ~/bin
+
+chmod +x 13 14</blockquote>
+<p style="text-align:justify;">Let&#8217;s &#8220;source&#8221; the ~/.bashrc (or simply open a new shell):</p>
+
+<blockquote>source ~/.bashrc</blockquote>
+<p style="text-align:justify;">That&#8217;s it. If you want to run a command using R13, just:</p>
+
+<blockquote>13 erl
+
+Erlang R13B04 (erts-5.7.5)
+
+Eshell V5.7.5  (abort with ^G)
+
+1&gt;</blockquote>
+Or:
+<blockquote>14 erl
+
+Erlang R14A (erts-5.8)
+<pre><span style="font-family:Georgia, 'Times New Roman', 'Bitstream Charter', Times, serif;line-height:19px;white-space:normal;font-size:13px;">Eshell V5.8  (abort with ^G)</span></pre>
+1&gt;</blockquote>
+<p style="text-align:justify;">Assuming you have a project you want to compile with R13:</p>
+
+<blockquote>13 make</blockquote>
+<p style="text-align:justify;">Or, if you prefer R14:</p>
+
+<blockquote>14 make</blockquote>
+<p style="text-align:justify;">Well, you should have got the idea at this point&#8230;</p>
+<p style="text-align:justify;">Notice that you can still specify the path of your favourite (default) Erlang installation in your ~/.bashrc file, so you wan&#8217;t need to prepend &#8220;14&#8221; to your commands every time you want to use the latest Erlang version.</p>
+<p style="text-align:justify;">As I&#8217;ve already said, there&#8217;s nothing special here. Just a bit of playing with paths that might turn useful from time to time.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How they tried to fool tryerlang.org]]></title>
+    <link href="http://prof3ta.github.com/blog/2010/10/14/how-they-tried-to-fool-tryerlang-org/"/>
+    <updated>2010-10-14T00:00:00+02:00</updated>
+    <id>http://prof3ta.github.com/blog/2010/10/14/how-they-tried-to-fool-tryerlang-org</id>
+    <content type="html"><![CDATA[<h3>Preface</h3>
+<p style="text-align:justify;"><a title="tryerlang.org" href="http://tryerlang.org" target="_blank">tryerlang.org</a> is an Interactive Erlang Shell which allows you to try the power of Erlang directly in your browser, without installing anything in your machine. In the first months of his existence, tryerlang.org has been subjected to a countless number of attacks, aiming at bringing the Erlang node down. Studying the tryerlang.org&#8217;s logs has been so far an highly interesting and constructive experience.</p>
+<p style="text-align:justify;">In this blog post I will present one of the attempted attacks. The attack was based on the concept of <em>External Term Representation </em>for Erlang, which is introduced in the next section.</p>
+
+<h3>External Term Representation</h3>
+<p style="text-align:justify;">In the distribution mechanism of Erlang, Erlang terms are converted into binaries before being sent to a remote host and then converted back into Erlang terms at the destination. The built-in functions <code>term_to_binary</code> and <code>binary_to_term</code> are used for the conversions.</p>
+<p style="text-align:justify;">More information about the External Term Representation are available in <a title="Erlang External Term Representation" href="http://www.erlang.org/doc/apps/erts/erl_ext_dist.html" target="_blank">the official Erlang Documentation</a>. How the External Term Representation has been used to perform the attack is explained in the next section.</p>
+
+<h3>Halting the Erlang Node</h3>
+<p style="text-align:justify;">The user wants to bring the Erlang node down. He then tries to use the <code>erlang:halt/0</code> function. This function, documented <a title="Erlang Halt" href="http://www.erlang.org/doc/man/erlang.html#halt-0" target="_blank">here</a>, halts the Erlang runtime system and indicates normal exit to the calling environment. It has no return value. The function has been disabled in tryerlang.org for security reasons, so the only result the user get is the following message:</p>
+
+<blockquote>&#8220;This functionality has been disabled for security reasons in tryerlang.org.&#8221;.</blockquote>
+<p style="text-align:justify;">So far, so good. The Erlang node is still up. The user thinks for a while and then he notices that tryerlang.org allows you to define <a title="Erlang Funs" href="http://www.erlang.org/doc/programming_examples/funs.html" target="_blank">funs</a>. Here is where the External Term Representation can help. <a title="export_ext" href="http://www.erlang.org/doc/apps/erts/erl_ext_dist.html#id83276" target="_blank">According to the documentation</a>, it is possible to encode an external fun - something like <code>fun M:F/A</code> - in the  following way:</p>
+<p style="text-align:justify;"><code>113 | Module | Function | Arity</code></p>
+<p style="text-align:justify;">Where <strong>Module</strong> and <strong>Function</strong> are atoms and <strong>Arity </strong>is  an integer. The atoms can be encoded using <a title="atom ext" href="http://www.erlang.org/doc/apps/erts/erl_ext_dist.html#ATOM_EXT" target="_blank">ATOM_EXT</a>, while <a title="small integer ext" href="http://www.erlang.org/doc/apps/erts/erl_ext_dist.html#id80902" target="_blank">SMALL_INTEGER_EXT</a> can be used for the arity integer.</p>
+<p style="text-align:justify;">The encoding for the atoms looks like:</p>
+<p style="text-align:justify;"><code>100 | Len | AtomName</code></p>
+<p style="text-align:justify;">Where <code>Len</code> is the length of <code>AtomName</code>, expressed in two bytes.</p>
+<p style="text-align:justify;">Finally, the encoding for the small integers looks like:</p>
+<p style="text-align:justify;"><code>97 | Int</code></p>
+<p style="text-align:justify;">The last thing we have to consider is that, in the External Term Representation, the byte <code>131</code> needs to be prepended to the term. Now that we have all the required knowledge to do it, let&#8217; try to encode the <code>erlang:halt/</code>0 function using the External Term Representation and let see if we can fool tryerlang.org!</p>
+<p style="text-align:justify;">We could write the binaries for the atoms <strong>erlang</strong> and <strong>halt</strong> by hand, but it&#8217;s actually more handy to use the <code>term_to_binary/1</code> BIF to do it for us. Since the function is blacklisted in tryerlang.org, let&#8217;s use our own shell.</p>
+<p style="text-align:justify;"><code>Eshell V5.8.1  (abort with ^G)</code></p>
+<p style="text-align:justify;"><code>&gt; term_to_binary(erlang).</code></p>
+<p style="text-align:justify;"><code>&lt;&lt;131,100,0,6,101,114,108,97,110,103&gt;&gt;</code></p>
+<code>&gt; term_to_binary(halt).</code>
+<p style="text-align:justify;"><code>&lt;&lt;131,100,0,4,104,97,108,116&gt;&gt;</code></p>
+<p style="text-align:justify;">Skipping the initial <code>131</code> byte (see above) and concatenating the other two obtained terms, we have:</p>
+<p style="text-align:justify;"><code> &lt;&lt;100,0,6,101,114,108,97,110,103,
+100,0,4,104,97,108,116&gt;&gt;
+</code></p>
+<p style="text-align:justify;">Prepending the <code>131</code> (prefix for all terms) and <code>113</code> (prefix for external funs) bytes and appending the arity integer, we have:</p>
+<p style="text-align:justify;"><code> &lt;&lt;131,113,
+100,0,6,101,114,108,97,110,103,
+100,0,4,104,97,108,116,
+97,0&gt;&gt;
+</code></p>
+<p style="text-align:justify;">We should have the binary representation of the external fun <code>erlang:halt/0</code>. Let&#8217;s check it!</p>
+<p style="text-align:justify;"><code>&gt; binary_to_term(&lt;&lt;131,113,
+100,0,6,101,114,108,97,110,103,
+100,0,4,104,97,108,116,97,0&gt;&gt;).</code></p>
+<p style="text-align:justify;"><code>8&gt;#Fun&lt;erlang.halt.0&gt;</code></p>
+<p style="text-align:justify;">Let&#8217;s now take this binary from our shell and let&#8217;s paste it in tryerlang.org. Oh, I forgot that the online shell doesn&#8217;t allow copy and paste (what a shame!), so we have to fill the whole binary sequence by hand&#8230;</p>
+<p style="text-align:justify;">After a couple of minutes of struggling against typos and errors, here&#8217;s our wonderful fun which we can bind to a new variable:</p>
+<p style="text-align:justify;"><code>&gt;B = &lt;&lt;131,113,100,0,6,101,114,108,
+97,110,103,100,0,4,104,97,108,116,97,0&gt;&gt;.</code></p>
+<p style="text-align:justify;">We now need to convert the binary into an Erlang term. Originally, tryerlang.org was allowing <a title="Erlang Safe Binary To Term" href="http://www.erlang.org/doc/man/erlang.html#binary_to_term-2" target="_blank">the binary_to_term function in safe mode</a>. This function has been now completely disabled after this attack. If you want to try what follows you will need to do it in your own Erlang shell.</p>
+<p style="text-align:justify;"><code>&gt;F = binary_to_term(B, [safe]).</code></p>
+<p style="text-align:justify;">Let&#8217;s now try to launch the fun as:</p>
+<p style="text-align:justify;"><code>&gt;F().</code></p>
+<p style="text-align:justify;">Well, that didn&#8217;t work as expected. tryerlang.org actually realized that the <code>erlang:halt/0</code> function was going to be called and he managed to block it. We need something different.</p>
+<p style="text-align:justify;">What would happens if we embed the <code>halt</code> function in another function call, say a <code>list:map/2</code>? The only problem would be that we need a parameter in our halt function. Fortunately <a href="http://www.erlang.org/doc/man/erlang.html#halt-1" target="_blank">an alternative version of <code>erlang:halt/0</code> exists, taking exactly one argument</a>. Let&#8217;s create an external representation for it. We just need to change the last element from 0 to 1. The BIF <code>f/1</code> forgets the value of a bounded variable.</p>
+<p style="text-align:justify;"><code>&gt; f(B).</code></p>
+<p style="text-align:justify;"><code>&gt; B = &lt;&lt;131,113,100,0,6,101,114,
+108,97,110,103,100,0,4,104,97,108,116,97,1&gt;&gt;.
+</code></p>
+<p style="text-align:justify;">Now we should be able to do&#8230;
+<code>
+&gt; f(F).</code></p>
+<p style="text-align:justify;"><code>&gt;F = binary_to_term(B, [safe]).</code></p>
+<p style="text-align:justify;"><code>&gt;lists:map(F, [0]).
+</code></p>
+<p style="text-align:justify;">And the node dies.</p>
+<p style="text-align:justify;">Actually the node is almost immediately brought back by <a title="Erlang Heart" href="http://www.erlang.org/doc/man/heart.html" target="_blank">heart</a> but, hey, I have to pay a beer to this guy! :)</p>
+<p style="text-align:justify;">Please note that <strong>the hacker had the advantage to look at the source code for tryerlang.org while performing the attack.</strong></p>
+<p style="text-align:justify;">I wanted to share this experience with all of you. I consider it highly constructive, since it leads to reflect on several aspects of Erlang. Comments and feedback are more than welcome.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Pair Programming]]></title>
+    <link href="http://prof3ta.github.com/blog/2010/10/09/pair-programming/"/>
+    <updated>2010-10-09T00:00:00+02:00</updated>
+    <id>http://prof3ta.github.com/blog/2010/10/09/pair-programming</id>
+    <content type="html"><![CDATA[<p style="text-align:center;"><a href="http://aloiroberto.files.wordpress.com/2010/10/screen-shot-2010-10-09-at-2-54-26-pm.png"><img class="aligncenter size-medium wp-image-386" title="Pair Programming" src="http://aloiroberto.files.wordpress.com/2010/10/screen-shot-2010-10-09-at-2-54-26-pm.png?w=267" alt="Pair Programming" width="267" height="299" /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Final Cut Pro 7 - Tips and Tricks - Part 1]]></title>
+    <link href="http://prof3ta.github.com/blog/2010/10/03/final-cut-pro-7-tips-and-tricks-part-1/"/>
+    <updated>2010-10-03T00:00:00+02:00</updated>
+    <id>http://prof3ta.github.com/blog/2010/10/03/final-cut-pro-7-tips-and-tricks-part-1</id>
+    <content type="html"><![CDATA[<p style="text-align:center;"><a href="http://aloiroberto.files.wordpress.com/2010/10/finalcut.jpg"><img class="aligncenter size-full wp-image-370" title="Final Cut Pro 7" src="http://aloiroberto.files.wordpress.com/2010/10/finalcut.jpg" alt="Final Cut Pro 7 Logo" width="180" height="189" /></a></p>
+
+<h2>1. Personal Settings and Preferences</h2>
+<p style="text-align:justify;">Working with Final Cut Pro, you soon learn how useful is to customize toolbars, layouts and preferences. All these customizations are stored in:</p>
+<p style="text-align:justify;">~/Library/Preferences/Final Cut Pro User Data/</p>
+<p style="text-align:justify;">If you want to reset Final Cut to its original settings, just delete all files contained there, except from the PLUGIN directory, which contains all the installed Final Cut plugins. If you plan to use Final Cut Pro in different machines, copy those files into a USB stick and bring them with you, copying them in the right place in the new machine before starting to work.</p>
+
+<h2>2. Focus on the Right Panel</h2>
+<p style="text-align:justify;">To switch between the Viewer, the Canvas, the Timeline and the Browser, use the show/hide keyboard shortcuts and save yourself plenty of time:</p>
+<p style="text-align:justify;">Cmd-1 -&gt; Focus on the Viewer</p>
+<p style="text-align:justify;">Cmd-2 -&gt; Focus on the Canvas</p>
+<p style="text-align:justify;">Cmd-3 -&gt; Focus on the Timeline</p>
+<p style="text-align:justify;">Cmd-4 -&gt; Focus on the Browser</p>
+
+<h2>3. The three most common windows layouts</h2>
+<p style="text-align:justify;">Sometimes you&#8217;re working on the Viewer. Other times you mainly work just on the Canvas. Some more times you want to see all panels simultaneously. Take five minutes of your time to set the three most common windows layouts as your custom layouts and use shortcuts to switch among them.</p>
+
+<ol>
+	<li>Enlarge the viewer and save the window layout as your custom layout 1 (from the WINDOW menu). You can recall this layout at any time with: <strong>Shift-U</strong></li>
+	<li>Now enlarge the canvas and save the new window layout as your custom layout 2. You can recall it by hitting: <strong>Option-U</strong></li>
+	<li>Go back to the default view via: <strong>Ctrl-U</strong></li>
+</ol>
+<h2>4. Scrubber quickly, easily!</h2>
+<p style="text-align:justify;">You can use the J-K-L keys to play  a clip or a sequence backward of forward.</p>
+<p style="text-align:justify;">J -&gt; Play backward</p>
+<p style="text-align:justify;">K -&gt; Stop playing</p>
+L -&gt; Play forward
+<p style="text-align:justify;">J-K -&gt; Play backward in slow motion</p>
+<p style="text-align:justify;">K-L -&gt; Play forward in slow motion</p>
+<p style="text-align:justify;">K-tap J -&gt; Play backward one frame at the time</p>
+<p style="text-align:justify;">K-tap L -&gt; Play forward one frame at the time</p>
+<p style="text-align:justify;">Also, press SHIFT to use seconds instead of frames as basic measurement unit for movements.</p>
+
+<h2>5. Don&#8217;t scrubber audio, if you don&#8217;t need it</h2>
+<p style="text-align:justify;">Use Shift-s to enable or disable audio-scrubbing.</p>
+
+<h2>6. Synchronize video tracks based on the audio</h2>
+<p style="text-align:justify;">Save yourself hours in postproduction by installing the <a title="Final Cut Plural Eyes Plugin" href="http://www.singularsoftware.com/pluraleyes.html" target="_blank">pluraleyes plugin</a> (149$) to do this.</p>
+
+<h2>7. Avoid rendering during preview</h2>
+Bored about the red bars on the top of the timeline which inform you that the video can&#8217;t be played without rendering? You&#8217;re probably working in Safe RT mode. On the top-left corner of the timeline, hit the RT button and select RT Unlimited. Also, adjust the remaining values to &#8220;Dynamic&#8221;. This will tell Final Cut to preview as many effects in the sequence as it can.
+<h2>8. Moving in the timeline</h2>
+Did you know that , when you are in the timeline, you can just start typing a number to move the playhead at that exact position? The number represents the number of frames you want to move by. If you want to use seconds, instead, just append a DOT at the end of the number.
+<p style="text-align:justify;">5 -&gt; 5 frames</p>
+<p style="text-align:justify;">5. -&gt; 5 seconds</p>
+
+<h2>9. Delete clips without leaving a gap</h2>
+<p style="text-align:justify;">This operation is known as &#8220;ripple delete&#8221;. Use the forward delete button (or FN + Delete if you&#8217;re on a laptop) to delete a clip and ripple the rest of the sequence. Toggle the ripple markers button (on the top-right corner of the timeline) according to the desired behaviour.</p>
+
+<h2>10. Preview in Full Screen</h2>
+In the Final Cut Pro Menu, set the following:
+
+View -&gt; Video Playback - &gt;Digital
+
+View -&gt; External Video -&gt; All frames
+
+Now you can preview your piece of artwork in full screen by hitting Cmd-F12.
+
+<strong>Stay tuned for more Final Cut tips and tricks!</strong>
+<p style="text-align:justify;"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Looking for an Erlang job?]]></title>
+    <link href="http://prof3ta.github.com/blog/2010/07/05/looking-for-an-erlang-job/"/>
+    <updated>2010-07-05T00:00:00+02:00</updated>
+    <id>http://prof3ta.github.com/blog/2010/07/05/looking-for-an-erlang-job</id>
+    <content type="html"><![CDATA[<p style="text-align:center;"><a href="http://totally-erlang.com" target="_blank"><img class="aligncenter size-medium wp-image-359" title="Screen shot 2010-07-05 at 3.35.28 PM" src="http://aloiroberto.files.wordpress.com/2010/07/screen-shot-2010-07-05-at-3-35-28-pm.png?w=300" alt="Erlang Jobs" width="300" height="231" /></a></p>
+Seeking an Erlang job? Looking for an Erlang developer to hire?
+
+The guys at <a title="Maximonster" href="http://maximonster.com/" target="_blank">Maximonster</a> have just realized a simple website to post Erlang-related job offers. It definitely deserves a look.
+
+Oh, the website is powered by <a href="http://zotonic.com/" target="_blank">Zotonic</a>, an Erlang CMS.
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[When all the applications start crashing on the iPhone [solved]]]></title>
+    <link href="http://prof3ta.github.com/blog/2010/06/13/when-all-the-applications-start-crashing-on-the-iphone-solved/"/>
+    <updated>2010-06-13T00:00:00+02:00</updated>
+    <id>http://prof3ta.github.com/blog/2010/06/13/when-all-the-applications-start-crashing-on-the-iphone-solved</id>
+    <content type="html"><![CDATA[It happened to me several times to encounter a tedious bug on my iPhone.
+
+Suddenly, with no apparent reason, every non native application crashes immediately after the launch. A reboot in this case doesn&#8217;t help. The native applications (mail, safari, settings, etc) simply work fine.
+
+I&#8217;ve just realized that an update of ANY existing application or the installation of ANY new application via the Apple store brings the device back into a normal state and all applications behave normally again.
+
+Obviously this is just an ugly workaround, but it seems to work very effectively. See if it helps.  
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to Display "accesskey" shortcuts in Google Chrome (and much more)]]></title>
+    <link href="http://prof3ta.github.com/blog/2010/06/12/how-to-display-accesskey-shortcuts-in-google-chrome-and-much-more/"/>
+    <updated>2010-06-12T00:00:00+02:00</updated>
+    <id>http://prof3ta.github.com/blog/2010/06/12/how-to-display-accesskey-shortcuts-in-google-chrome-and-much-more</id>
+    <content type="html"><![CDATA[Have you ever heard about <a href="http://en.wikipedia.org/wiki/Access_key" target="_blank">access keys</a>? Well, I did. And I loved them. Your productivity can be so improved when surfing a web page by avoiding to use the mouse and by using shortcuts, instead.
+
+The bad thing about access keys is that they&#8217;re often hidden, by default, in the web pages. This doesn&#8217;t make sense to me.
+
+Take the Twitter home page. How many of you knew that, during a search, you could press CTRL+ALT+n to display the &#8220;N new tweets since you started searching&#8221; or that you could press CTRL+ALT+s to visit your &#8220;settings&#8221; page? As a different example, let&#8217;s consider Wikipedia. Did you know that CTRL+ALT+e lead you to the &#8220;edit&#8221; mode? Probably not.
+
+Resuming, &#8220;accesskey&#8221; shortcuts can be very useful. So why they are not displayed by default on the web pages? How should we know about them? And how could we ever remember all of them?
+
+Long time ago, I found <a href="http://blog.andrewbeacock.com/2007/06/firefox-hack-to-display-accesskey.html" target="_blank">this post </a>on how to display the &#8220;accesskey&#8221; keyboard shortcuts in Firefox and I used it for a while. But I&#8217;ve recently fallen in love with Google Chrome and I was wondering if the same feature was already available.
+
+At first, I googled for a quick solution and I couldn&#8217;t find anything really useful. Then, <a href="http://superuser.com/questions/141142/displaying-the-accesskey-keyboard-shortcuts-in-chrome-mac" target="_blank">I asked on Superuser if what I wanted was somehow possible</a>. After a couple of hours, someone answered my question, claiming he created a new Chrome extension just for that. I must admit I was more impressed by the rapidity of the answer than by the answer itself. If this guy could read my specification and implement a solution in such a short time, there was only one possible consequence: <strong>&#8220;Creating extension for Google Chrome is easy&#8221;</strong>.
+
+So, I tried by myself.
+
+First of all, I had a look <a href="http://code.google.com/chrome/extensions/getstarted.html" target="_blank">to the &#8220;Getting Started&#8221; section of the Chrome extensions documentation</a>. As expected, everything was extremely simple. To implement the &#8220;accesskey&#8221; shortcuts, it took me no more than five minutes. Literally. And now my Twitter page looks like:
+<p style="text-align:center;"><a href="http://aloiroberto.files.wordpress.com/2010/06/screen-shot-2010-06-11-at-11-59-19-pm.png"><img class="aligncenter size-medium wp-image-339" title="My new Twitter Home Page" src="http://aloiroberto.files.wordpress.com/2010/06/screen-shot-2010-06-11-at-11-59-19-pm.png?w=300" alt="" width="300" height="173" /></a></p>
+Can you see the pink characters close to the links? They are all available &#8220;accesskey&#8221; shortcuts, a piece of information that was already embedded in the web page but that has just been hidden. Let&#8217;s see how can we make it visible again via a brand new Google Chrome Extension.
+
+First of all, <strong>create a new folder</strong> somewhere in your hard drive and call it &#8220;shortcuts&#8221;.
+
+Every Chrome extension is characterized by a &#8220;manifest&#8221; file, written in json, reporting the &#8220;properties&#8221; of the extension itself. Inside the &#8220;shortcuts&#8221; folder, <strong>create a new file, named &#8220;manifest.json&#8221;</strong>:
+<pre>{</pre>
+<pre>  "name": "Shortcuts",</pre>
+<pre>  "version": "1.0",</pre>
+<pre>  "description": "Display the accesskey shortcuts.",</pre>
+<pre>  "content_scripts": [{</pre>
+<pre>    "matches": ["http://*/*", "https://*/*"],</pre>
+<pre>    "css": ["style.css"]</pre>
+<pre>  }]</pre>
+<pre>}</pre>
+Apart from the name, the version number and the description of the extension, you can notice a &#8220;content_scripts&#8221; property. This is used to &#8220;inject&#8221; some code automatically every time a web page is displayed. In our case, we simply want to apply some specific CSS properties to the pages. The &#8220;matches&#8221; section tells Chrome to apply the transformation to every page using the http or the https protocol.
+
+Now, we just need to <strong>create a style.css file</strong> (inside the same &#8220;shortcuts&#8221; folder) containing the needed stylistic information:
+<pre>a[accesskey]:after,</pre>
+<pre>button[accesskey]:after,</pre>
+<pre>input[accesskey]:after,</pre>
+<pre>label[accesskey]:after,</pre>
+<pre>legend[accesskey]:after,</pre>
+<pre>textarea[accesskey]:after {</pre>
+<pre>  margin-left: 0.3em;</pre>
+<pre>  color: Plum;</pre>
+<pre>  content: "[" attr(accesskey) "]";</pre>
+<pre>}</pre>
+That&#8217;s all folks. We&#8217;re done. We can just install our brand new Google Chrome Extensions by visiting the URL:
+
+<address>chrome://extension</address>and clicking on the &#8220;Load Unpacked Extension&#8221; button.
+
+Using the same strategy, it is obviously possible to apply different CSS transformations. Imagine for a second that you would like to hide all the images from a web page. A CSS like the following would do the job:
+<pre>img {</pre>
+<pre>  display: none;</pre>
+<pre>}</pre>
+Hope this help.
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[tryerlang.org - Slides from the Erlang Factory]]></title>
+    <link href="http://prof3ta.github.com/blog/2010/06/11/tryerlang-org-slides-from-the-erlang-factory/"/>
+    <updated>2010-06-11T00:00:00+02:00</updated>
+    <id>http://prof3ta.github.com/blog/2010/06/11/tryerlang-org-slides-from-the-erlang-factory</id>
+    <content type="html"><![CDATA[<p style="text-align:center;"><a href="http://www.tryerlang.org"><img class="size-medium wp-image-328 aligncenter" title="tryerlang.org" src="http://aloiroberto.files.wordpress.com/2010/06/screen-shot-2010-06-11-at-6-56-31-pm.png?w=300" alt="tryerlang.org" width="300" height="266" /></a></p>
+I had the honor to present tryerlang.org yesterday at the London Erlang Factory. If you want, you can download the slides of my &#8220;lightning talk&#8221; from <a href="http://aloiroberto.files.wordpress.com/2010/06/tryerlang.pdf"></a><a href="http://aloiroberto.files.wordpress.com/2010/06/tryerlang.pdf">here</a>. Thanks for being there.
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Alternative Fashion Week - London 2010]]></title>
+    <link href="http://prof3ta.github.com/blog/2010/04/24/london-alternative-fashion-week/"/>
+    <updated>2010-04-24T00:00:00+02:00</updated>
+    <id>http://prof3ta.github.com/blog/2010/04/24/london-alternative-fashion-week</id>
+    <content type="html"><![CDATA[<p style="text-align:center;">Here are the photos from the London Alternative Fashion Week in Spitafields.</p>
+<p style="text-align:center;"><a href="http://www.flickr.com/photos/roberto-aloi/sets/72157623796753911/" target="_blank"><img class="aligncenter size-medium wp-image-319" title="London Alternative Fashion Week" src="http://aloiroberto.files.wordpress.com/2010/04/screen-shot-2010-04-24-at-3-13-22-pm.png?w=300" alt="" width="300" height="300" /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[A Romance in Search (Sicilian version)]]></title>
+    <link href="http://prof3ta.github.com/blog/2010/04/14/a-romance-in-search-sicilian-version/"/>
+    <updated>2010-04-14T00:00:00+02:00</updated>
+    <id>http://prof3ta.github.com/blog/2010/04/14/a-romance-in-search-sicilian-version</id>
+    <content type="html"><![CDATA[Based on the <a href="http://www.wired.com/epicenter/2010/02/googles-super-bowl-ad-a-romance-in-search/" target="_blank">Google&#8217;s 2010 ad at the Superbowl</a>, I&#8217;ve created a sicilian version of the &#8220;romance in search&#8221;.
+
+Hope you&#8217;ll enjoy it :)
+
+[youtube=http://www.youtube.com/watch?v=RuN7dNAm0Bw]
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Numbered lists in Emacs]]></title>
+    <link href="http://prof3ta.github.com/blog/2010/04/10/numbered-lists-in-emacs/"/>
+    <updated>2010-04-10T00:00:00+02:00</updated>
+    <id>http://prof3ta.github.com/blog/2010/04/10/numbered-lists-in-emacs</id>
+    <content type="html"><![CDATA[Imagine that you&#8217;re using Emacs and you have a list of items that you would like to convert into a numbered list.
+
+We&#8217;re going from:
+<blockquote>first
+
+second
+
+third</blockquote>
+To:
+<blockquote>1. first
+
+2. second
+
+3. third</blockquote>
+Obviously, there are many ways to achieve this, but one is to use <a href="http://www.gnu.org/software/emacs/manual/html_node/emacs/Keyboard-Macro-Counter.html#Keyboard-Macro-Counter" target="_blank">the Emacs Keyboard Macro Counter</a>.
+<div id="_mcePaste">
+<ul>
+	<li>Put the cursor one line ABOVE your list.</li>
+	<li>Start a macro: `F3`</li>
+	<li>Insert the counter value: `C-x C-k C-i`. A 0 will appear</li>
+	<li>Insert the DOT and a space: `.`</li>
+	<li>Move  the cursor to the next line</li>
+	<li>Stop the macro: `F4`</li>
+	<li>Select your list</li>
+	<li>`M-x apply-macro-to-region-lines`</li>
+	<li>You can delete the 0 you added on the top and enjoy :)</li>
+</ul>
+</div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[When Erlang meets Italy]]></title>
+    <link href="http://prof3ta.github.com/blog/2010/03/17/when-erlang-meets-italy/"/>
+    <updated>2010-03-17T00:00:00+01:00</updated>
+    <id>http://prof3ta.github.com/blog/2010/03/17/when-erlang-meets-italy</id>
+    <content type="html"><![CDATA[<a href="http://aloiroberto.files.wordpress.com/2009/11/erlang-logo.png"><img class="aligncenter size-full wp-image-145" title="Erlang" src="http://aloiroberto.files.wordpress.com/2009/11/erlang-logo.png" alt="Erlang Logo" width="156" height="135" /></a>
+
+In the past few days, you might have noticed lot of tweets and noise (or maybe melodies) on the web regarding Erlang and Italy. Since most of the discussions have been performed in Italian, let&#8217;s try to summarize here what has just happened.
+
+Everything started from a mail from <a href="http://twitter.com/eolo999" target="_blank">@eolo</a> in the official <a href="http://www.erlang.org/cgi-bin/ezmlm-cgi/4" target="_blank">erlang-questions mailing list</a>, proposing the creation of the first Italian Erlang User Group. A couple of members of the mailing list immediately pointed out that an Erlang User Group <a href="http://www.ossblog.it/post/4275/nasce-il-primo-erlang-user-group-in-italia" target="_blank">has already been created in Italy a couple of years ago</a>.
+
+Well, apparently that simple mail was enough to awake that old group from his sleeping phase. Lot of new members are joining the group, that counts more than 40 members right now.
+
+Rumors about an Erlang interest reached the careful ears of <a href="http://www.erlang-solutions.com" target="_blank">Erlang Solutions Ltd.</a>, a UK based Erlang company, that showed a great interest in boosting an Erlang User Group in Italy.
+
+In a couple of days, all these discussions have been translated into a concrete proposal: an <a href="http://groups.google.com/group/erlang-etna/browse_thread/thread/8814211ae88ac1ed" target="_blank">Erlang Factory Lite in Rome</a>. Essentially, an Erlang Factory Lite consists in a sequence of talks regarding Erlang, followed by a so-called &#8220;erlounge&#8221;, an informal meeting having place in a pub or similar to allow people to meet each other and to discuss their Erlang experiences.
+
+A successful Erlang Factory Lite had place, for example, <a href="http://www.erlang-factory.com/conference/Krakow2009" target="_blank">past November in Krakow</a>.
+
+To grant a free event, we&#8217;re currently looking at sponsors and at a venue, able to guest from 50 to 100 people. We&#8217;re doing our best to find some special &#8220;speaker&#8221;, too.
+
+Together with the event, an Erlang course could be delivered by Erlang Solutions Ltd. at a special price, so whoever would be interested in this, feel free to contact me or directly the company.
+
+It seems Erlang is finally meeting Italy and God only knows what is going to happen :)
+
+In the meantime, stay tuned on Twitter. The tag to follow is #erlangit.
+<p style="text-align:center;">[polldaddy poll=2920281]</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to defeat Berlusconi. The definitive guide.]]></title>
+    <link href="http://prof3ta.github.com/blog/2010/03/06/how-to-defeat-berlusconi-the-definitive-guide/"/>
+    <updated>2010-03-06T00:00:00+01:00</updated>
+    <id>http://prof3ta.github.com/blog/2010/03/06/how-to-defeat-berlusconi-the-definitive-guide</id>
+    <content type="html"><![CDATA[This seems to be one of the biggest political problems, nowadays. I&#8217;ll try to provide you an effective strategy on how to defeat your worst enemy in ages.
+<h2>Berlusconi is not a dictator</h2>
+We should be quite clear here. Especially abroad, people believe Berlusconi is governing Italy without having Italian consensus. This is just a wrong assumption and, as in mathematics, if you start from a wrong assumption, you&#8217;ll end wrong. So, for a moment, assume Italian people properly voted him, take a deep breath and reflect on why this could ever happen. An hint will follow very shortly.
+<h2>A missing alternative</h2>
+I&#8217;ll ask you again, after this heading. Why people is voting Berlusconi? Because they have no alternative. And it&#8217;s not just because of an extreme power on the media that makes impossible for opponents to show them up.
+
+Seriously, there&#8217;s no one on the left party that could even remotely aim to the government in Italy. Italians are perfectly aware of this. They are aware of the fact that, even if they vote for the left party, they&#8217;ll be so disunited that they could never create a stable majority. They would be fighting each other and new elections would be needed in a few months.
+
+If I ask you (and I&#8217;m looking at you, UK people) a name of someone from the left party, a candidate, their programme, would you be able to provide me with a name? How many of you know about <a href="http://www.beppegrillo.it/english.php" target="_blank">Beppe Grillo</a> and his political programme?
+<h2>The wrong approach</h2>
+One of the biggest errors in fighting Berlusconi regards strategy. Opponents usually reason in the following way:
+<ol>
+	<li>Get rid of Berlusconi</li>
+	<li>Find an alternative</li>
+</ol>
+What I suggest, instead, is:
+<ol>
+	<li>Find an alternative</li>
+	<li>Get rid of Berlusconi</li>
+</ol>
+<h2>It&#8217;s not a Media battle</h2>
+It&#8217;s literally evident what a great communicator Berlusconi is. His power in the media world is just scaring.
+
+Now, reflect. If you were in a war and you&#8217;d know your opponent is extremely skilled in a certain type of fight (say he&#8217;s got the best archers in the world), would you try to beat him by sending your archers against his own archers? Honestly, it wouldn&#8217;t make any sense.
+
+You&#8217;ll never obtain anything attacking him on the media. You need a different strategy.
+<h2>Be objective, don&#8217;t blame him for everything</h2>
+Articles like <a href="http://www.timesonline.co.uk/tol/comment/leading_article/article6401859.ece" target="_blank">this</a> one have the opposite effect on the Italian population. Treat Berlusconi in an objective way. Don&#8217;t publicly attack him on literally everything. If something wrong happens, the press immediately blames Berlusconi. You&#8217;ll just make him look as a victim, and, trust me, you&#8217;ll loose credibility and professionalism. If he&#8217;s doing something good, talk about it, don&#8217;t ignore it.
+<h2>Do not compare Berlusconi with Mussolini</h2>
+Berlusconi has nothing to do with Benito Mussolini. If you compare him with the dictator, you&#8217;ll help him in winning consensus. I know this sounds weird, but, for example, in the South of Italy, some people have a deformed conception of Fascism. The problem is far from being trivial and a lot of historical education should be performed in this sense.
+
+Even if it&#8217;s sounds awkward, you need to understand how people were living in the South during Fascism. Lot of burglaries and killings, chaos and disorder were having place before the dictator. During that period, people were living under a surface of  safe condition. Lot of roads and sewers and land reclamations have been performed. The Italian football team won two world cups. If you talk to an old grandfather you&#8217;ll hear sentences like: &#8220;Today, I&#8217;m not feeling safe. When Mussolini was governing, I could sleep with my front door open&#8221;.
+
+You need to understand and educate these people. In the meantime, clarify that Berlusconi is not Mussolini. Don&#8217;t merge the two personalities, and you&#8217;ll gain consensus among this category of people (that is luckily not the majority, nut still they represent a good number in some areas).
+<h2>Don&#8217;t talk about his private life</h2>
+Berlusconi is not an actor. People shouldn&#8217;t care about his love affairs, he&#8217;s not Tiger Woods. Treat him as an actor and he&#8217;ll win consensus (actors will always have popularity, no matter if they&#8217;re good or bad behaving). Treat him as a politician and you&#8217;ll win. A Cornwell&#8217;s style <em>Gotham Gotcha</em> gossip column won&#8217;t help you in beating him.
+<h2>Be informed</h2>
+There are so many errors and imprecisions when foreign press is reporting news from Italy. Guys, if you want to gain consensus, be informed, send people there to check what&#8217;s really going on. Don&#8217;t trust rumors. Talk to Italian people, they&#8217;re better than you think.
+<h2>Don&#8217;t focus on him, but on his co-workers</h2>
+Berlusconi has a great personality. Doesn&#8217;t matter if it&#8217;s a good one or a bad one. He&#8217;s simply too strong (because of media, because of money, whatever you want). But he&#8217;s not governing Italy by himself. He&#8217;s surrounded by low-profile people, easily attackable. Focus on the <a href="http://www.leganord.org/" target="_blank">Lega Nord</a>, focus on people is selecting for decisive roles. Unmount these people, one by one. Carefully look at their political programme. You&#8217;ll find incredible things, extremely easy to attack.
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Google Chrome Beta Update Error - Solved]]></title>
+    <link href="http://prof3ta.github.com/blog/2010/02/12/google-chrome-beta-update-error-solved/"/>
+    <updated>2010-02-12T00:00:00+01:00</updated>
+    <id>http://prof3ta.github.com/blog/2010/02/12/google-chrome-beta-update-error-solved</id>
+    <content type="html"><![CDATA[Recently, Google released a new Beta version of its browser Chrome.
+
+Well, my installed version of Chrome didn&#8217;t detect automatically the update, so I downloaded the latest version from:
+
+<a href="http://www.google.com/landing/chrome/beta/" target="_blank">http://www.google.com/landing/chrome/beta/</a>
+
+Then, when I tried to drag and drop the application into the <em>Applications</em> folder (this will require you to quit from Chrome, if open), Snow Leopard complained about:
+
+<blockquote>The operation can’t be completed because you don’t have permission to access some of the items.</blockquote>
+
+Well, just open the <em>Applications</em> folder in <em>Finder</em>. <strong>Move to Trash</strong> the old Google Chrome application (it will prompt you with the Admin password). Then, drag and drop the new Chrome on it.
+
+Now, you can enjoy your new Google Chrome Beta version and its extensions.
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Highcharts PHP Library]]></title>
+    <link href="http://prof3ta.github.com/blog/2010/02/04/highcharts-php-library/"/>
+    <updated>2010-02-04T00:00:00+01:00</updated>
+    <id>http://prof3ta.github.com/blog/2010/02/04/highcharts-php-library</id>
+    <content type="html"><![CDATA[<h3 id="what-is-highcharts-php">What is highcharts-php</h3>
+highcharts-php is a PHP library to interact with the <a href="http://www.highcharts.com/">Highcharts JS charting library</a>.
+<h3 id="what-is-highcharts">What is Highcharts</h3>
+Reading from the official documentation, &#8220;Highcharts is a charting library written in pure JavaScript, offering an easy way of adding interactive charts to your web site or web application&#8221;.
+
+The Highcharts JS libraries are available at: www.highcharts.com and they are free for non commercial use. For commercial usage, please refers to the license and pricing section of their website.
+<h3 id="are-the-highcharts-and-highcharts-php-projects-related">Are the Highcharts and highcharts-php projects related?</h3>
+Again, the highcharts-php project has nothing to do with the Highcharts projects. The authors are different and the two projects don&#8217;t share any single line of code.
+<h3 id="why-highcharts-php">Why highcharts-php</h3>
+The reason behind the highcharts-php project is to offer a useful tool to PHP developers to automatically generate Highcharts JS code starting from some PHP data.
+
+The <strong>highcharts-php </strong>library is available for free download, as usual, at my software page:
+
+<a href="http://aloiroberto.wordpress.com/software/" target="_blank">http://aloiroberto.wordpress.com/software/</a>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[PHP Mode for Emacs - Flymake]]></title>
+    <link href="http://prof3ta.github.com/blog/2010/02/02/php-mode-for-emacs-flymake/"/>
+    <updated>2010-02-02T00:00:00+01:00</updated>
+    <id>http://prof3ta.github.com/blog/2010/02/02/php-mode-for-emacs-flymake</id>
+    <content type="html"><![CDATA[I always find <strong>flymake </strong>extremely useful when editing code in Emacs.
+
+In this period, I&#8217;m working a bit with PHP and I&#8217;ve immediately thought that enabling flymake for Emacs was indeed a good idea.
+
+Well, <a href="http://twitter.com/sachac" target="_blank">someone</a> has apparently already thought about it, so everything you need to know about it is explained <a href="http://sachachua.com/wp/2008/07/emacs-and-php-on-the-fly-syntax-checking-with-flymake/" target="_blank">here</a>.
+
+I tried it on my machine and it worked like a charm. Combined with some <a href="http://aloiroberto.wordpress.com/2009/12/09/php-and-emacs-how-to-browse-documentation/" target="_blank">PHP documentation integrated in Emacs</a>, I&#8217;m now starting to have a complete and powerful development environment for PHP.
+
+I&#8217;m now wondering if there&#8217;s any way to get this a step forward. First of all, I&#8217;m trying to identify <em>errors</em> different from the parsing ones. What I would really love, for example, is to have Emacs showing me all the <strong>unused variables</strong> in a PHP file. If you have any idea on how to achieve this, don&#8217;t be shy and share your thoughts with me, as a post comment or, if you prefer, as a private e-mail or through <a href="http://twitter.com/prof3ta" target="_blank">twitter</a>.
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[This blog has got a QR code!]]></title>
+    <link href="http://prof3ta.github.com/blog/2010/01/23/this-blog-has-got-a-qr-code/"/>
+    <updated>2010-01-23T00:00:00+01:00</updated>
+    <id>http://prof3ta.github.com/blog/2010/01/23/this-blog-has-got-a-qr-code</id>
+    <content type="html"><![CDATA[<a href="http://aloiroberto.wordpress.com"><img class="aligncenter" title="Aloi Roberto Blog QR Code" src="http://qrcode.kaywa.com/img.php?s=8&amp;d=http://aloiroberto.wordpress.com" alt="Aloi Roberto Blog QR Code" width="248" height="248" /></a>
+
+I finally generated a QR barcode for this blog.
+
+If you don&#8217;t know what I&#8217;m talking about, please have a look to <a href="http://en.wikipedia.org/wiki/QR_Code" target="_blank">this</a>. Otherwise, feel free to copy and spread it :)
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[One year of Roberto Aloi]]></title>
+    <link href="http://prof3ta.github.com/blog/2010/01/23/one-year-of-roberto-aloi/"/>
+    <updated>2010-01-23T00:00:00+01:00</updated>
+    <id>http://prof3ta.github.com/blog/2010/01/23/one-year-of-roberto-aloi</id>
+    <content type="html"><![CDATA[<p style="text-align:center;"><a href="http://aloiroberto.files.wordpress.com"><img class="aligncenter size-medium wp-image-264" title="Roberto Aloi's Blog Trend" src="http://aloiroberto.files.wordpress.com/2010/01/screen-shot-2010-01-23-at-6-09-26-pm.png?w=300" alt="Roberto Aloi's Blog Trend" width="300" height="116" /></a></p>
+I registered this blog almost one year ago (even if I started adding posts to it in a more constant way just in August).
+
+Now that one year is passed, it&#8217;s time to view at the statistics. I passed from 0 to <strong>2.270 visits per month</strong>. It&#8217;s not a lot, but it is still something. Currently, I have more than <strong>100 unique visits</strong> per day to the blog.
+
+I hope you find the blog and its posts interesting.
+]]></content>
+  </entry>
   
 </feed>

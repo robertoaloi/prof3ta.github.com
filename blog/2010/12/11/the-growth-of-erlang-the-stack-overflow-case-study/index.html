@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>The growth of Erlang: The Stack Overflow Case Study - Roberto Aloi</title>
+  <meta name="author" content="Roberto Aloi">
+
+  
+  <meta name="description" content="One of the most popular technical Questions and Answers (Q&amp;A) websites is nowadays represented by Stack Overflow. Compared to a more traditional &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://prof3ta.github.com/blog/2010/12/11/the-growth-of-erlang-the-stack-overflow-case-study/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Roberto Aloi" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Roberto Aloi</a></h1>
+  
+    <h2>Software Engineer, Erlang Passionate, Father.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:prof3ta.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/languagesintheworld">Languages In The World</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">The Growth of Erlang: The Stack Overflow Case Study</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-11T00:00:00+01:00" pubdate data-updated="true">Dec 11<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content">One of the most popular technical <em>Questions and Answers</em> (Q&amp;A) websites is nowadays represented by <a href="http://www.stackoverflow.com">Stack Overflow</a>. <span style="font-size:15px;">Compared to a more traditional mailing list, it provides different advantages:</span>
+<ul>
+	<li>More structured information</li>
+	<li>Focus on the problem/issue</li>
+	<li>Information easier to find</li>
+	<li>Threads easier to follow</li>
+	<li>Concept of reputation (most active users &#8220;rewarded&#8221;)</li>
+	<li>Up/Down votes</li>
+	<li>Etc.</li>
+</ul>
+I&#8217;m not suggesting that Stack Overflow should exclusively replace every existing mailing list. I rather feel that the two tools may coexist, with different purposes.
+<ul>
+	<li><span style="font-size:15.6px;">Technical problem/issue -&gt; Stack Overflow</span></li>
+	<li><span style="font-size:15.6px;">Open discussion -&gt; Mailing list </span></li>
+</ul>
+<span style="font-size:15px;">Recently, I&#8217;ve noticed an increased number of posts tagged <em>Erlang</em> on Stack Overflow. I then asked myself:</span>
+<ol>
+	<li><span style="font-size:15px;">How Erlang is growing on Stack Overflow?</span></li>
+	<li><span style="font-size:15px;">How the Stack Overflow growth is affecting the Erlang mailing list?</span></li>
+	<li><span style="font-size:15px;">How Erlang is growing on Stack Overflow in relation to the major (read, most popular) languages (such as C++, Java or PHP)?</span></li>
+	<li><span style="font-size:15px;">How Erlang is growing on Stack Overflow in relation to languages such as Scala, Haskell or Go?</span></li>
+</ol>
+Then, I&#8217;ve tried to give ananswer to all of these questions.
+<h2>How Erlang is growing on Stack Overflow?</h2>
+Probably you don&#8217;t know, but there is a website (<a href="http://odata.stackexchange.com">odata.stackexchange.com</a>), which allows you to run arbitrary SQL queries on the Stack Exchange family of sites, of which Stack Overflow is part. Well, I decided to write my first query, asking Stack Overflow about the trend of posts tagged <em>Erlang </em>over time. The query is parametrical and can be used to check the trend of <em>any</em> tag on Stack Overflow. Also, since my SQL Server skills honestly suck, you are very welcome to edit and to make more efficient <a href="http://data.stackexchange.com/stackoverflow/s/708/how-many-posts-per-month-for-a-tag">my query</a>.
+
+The charted results of the query run for the Erlang tag look more or less like this:
+
+<a href="http://aloiroberto.files.wordpress.com/2010/12/screen-shot-2010-12-11-at-2-40-55-pm1.png"><img class="aligncenter size-full wp-image-459" title="Erlang Posts on Stack Overfow" src="http://aloiroberto.files.wordpress.com/2010/12/screen-shot-2010-12-11-at-2-40-55-pm1.png" alt="Erlang Posts on Stack Overfow" width="540" height="320" /></a>
+
+Where the x-axis ranges from August 2008 to October 2010.
+<h2>How the Stack Overflow growth is affecting the Erlang mailing list?</h2>
+<a title="Gmane" href="www.gmane.org">Gmane</a> offers a whole set services related to mailing lists. Among these, it provides some really interesting statistics on the mailing list usage. The following graphs report the messages and the participants per day for the Erlang General mailing list for the past few years. You can find more details <a href="http://gmane.org/details.php?group=gmane.comp.lang.erlang.general">here</a>.
+
+<a href="http://aloiroberto.files.wordpress.com/2010/12/screen-shot-2010-12-11-at-2-50-46-pm.png"><img class="aligncenter size-full wp-image-460" title="Activity on the Erlang General Mailing List" src="http://aloiroberto.files.wordpress.com/2010/12/screen-shot-2010-12-11-at-2-50-46-pm.png" alt="" width="507" height="326" /></a>
+
+To a very first analysis, it seems that the recent growth of Stack Overflow didn&#8217;t affect too much the Erlang mailing list, even if you can notice a tiny decrease in the mailing list usage in the final section of the graph (period 2008/2009). It sounds obvious how Stack Overflow shouldn&#8217;t be seen as the unique possible affecter of the mailing list usage.
+<h2>How Erlang is growing on Stack Overflow in relation to the major (read, most popular) languages (such as C++, Java or PHP)?</h2>
+A graph is worth a billion words.
+
+<a href="http://aloiroberto.files.wordpress.com/2010/12/screen-shot-2010-12-11-at-3-11-55-pm.png"><img class="aligncenter size-full wp-image-464" title="Erlang VS C++, Java and PHP" src="http://aloiroberto.files.wordpress.com/2010/12/screen-shot-2010-12-11-at-3-11-55-pm.png" alt="Erlang VS C++, Java and PHP" width="540" height="320" /></a>
+<h2>How Erlang is growing on Stack Overflow in relation to languages such as Scala or Haskell?</h2>
+<a href="http://aloiroberto.files.wordpress.com/2010/12/screen-shot-2010-12-11-at-3-11-18-pm.png"><img class="aligncenter size-full wp-image-465" title="Erlang VS Scala, Haskell and Go" src="http://aloiroberto.files.wordpress.com/2010/12/screen-shot-2010-12-11-at-3-11-18-pm.png" alt="Erlang VS Scala, Haskell and Go" width="540" height="319" /></a>
+<h2>Conclusions</h2>
+Comparing Erlang with the major languages such as PHP, C++ or Java is probably a bit <em>unfair</em>. I just hope you enjoyed reading this simple case study as much as I enjoyed writing it. <span style="font-size:15.6px;">Feel free to play with my query. Comments and opinions are always welcome.</span>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Roberto Aloi</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-11T00:00:00+01:00" pubdate data-updated="true">Dec 11<span>th</span>, 2010</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://prof3ta.github.com/blog/2010/12/11/the-growth-of-erlang-the-stack-overflow-case-study/" data-via="robertoaloi" data-counturl="http://prof3ta.github.com/blog/2010/12/11/the-growth-of-erlang-the-stack-overflow-case-study/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2010/11/24/how-to-manage-multiple-erlang-installations/" title="Previous Post: How to manage multiple Erlang installations">&laquo; How to manage multiple Erlang installations</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/04/18/domain-renewal-group-fraud/" title="Next Post: Domain Renewal Group Fraud">Domain Renewal Group Fraud &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/04/18/domain-renewal-group-fraud/">Domain Renewal Group Fraud</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/12/11/the-growth-of-erlang-the-stack-overflow-case-study/">The growth of Erlang: The Stack Overflow Case Study</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/11/24/how-to-manage-multiple-erlang-installations/">How to manage multiple Erlang installations</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/10/14/how-they-tried-to-fool-tryerlang-org/">How they tried to fool tryerlang.org</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/10/09/pair-programming/">Pair Programming</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("robertoaloi", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/robertoaloi" class="twitter-follow-button" data-show-count="false">Follow @robertoaloi</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Roberto Aloi -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

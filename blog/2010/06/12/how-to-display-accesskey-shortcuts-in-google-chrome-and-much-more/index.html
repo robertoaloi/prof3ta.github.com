@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>How to Display "accesskey" shortcuts in Google Chrome (and much more) - Roberto Aloi</title>
+  <meta name="author" content="Roberto Aloi">
+
+  
+  <meta name="description" content="Have you ever heard about access keys? Well, I did. And I loved them. Your productivity can be so improved when surfing a web page by avoiding to use &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://prof3ta.github.com/blog/2010/06/12/how-to-display-accesskey-shortcuts-in-google-chrome-and-much-more/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Roberto Aloi" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Roberto Aloi</a></h1>
+  
+    <h2>Software Engineer, Erlang Passionate, Father.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:prof3ta.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/languagesintheworld">Languages In The World</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">How to Display "Accesskey" Shortcuts in Google Chrome (and Much More)</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-12T00:00:00+02:00" pubdate data-updated="true">Jun 12<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content">Have you ever heard about <a href="http://en.wikipedia.org/wiki/Access_key" target="_blank">access keys</a>? Well, I did. And I loved them. Your productivity can be so improved when surfing a web page by avoiding to use the mouse and by using shortcuts, instead.
+
+The bad thing about access keys is that they&#8217;re often hidden, by default, in the web pages. This doesn&#8217;t make sense to me.
+
+Take the Twitter home page. How many of you knew that, during a search, you could press CTRL+ALT+n to display the &#8220;N new tweets since you started searching&#8221; or that you could press CTRL+ALT+s to visit your &#8220;settings&#8221; page? As a different example, let&#8217;s consider Wikipedia. Did you know that CTRL+ALT+e lead you to the &#8220;edit&#8221; mode? Probably not.
+
+Resuming, &#8220;accesskey&#8221; shortcuts can be very useful. So why they are not displayed by default on the web pages? How should we know about them? And how could we ever remember all of them?
+
+Long time ago, I found <a href="http://blog.andrewbeacock.com/2007/06/firefox-hack-to-display-accesskey.html" target="_blank">this post </a>on how to display the &#8220;accesskey&#8221; keyboard shortcuts in Firefox and I used it for a while. But I&#8217;ve recently fallen in love with Google Chrome and I was wondering if the same feature was already available.
+
+At first, I googled for a quick solution and I couldn&#8217;t find anything really useful. Then, <a href="http://superuser.com/questions/141142/displaying-the-accesskey-keyboard-shortcuts-in-chrome-mac" target="_blank">I asked on Superuser if what I wanted was somehow possible</a>. After a couple of hours, someone answered my question, claiming he created a new Chrome extension just for that. I must admit I was more impressed by the rapidity of the answer than by the answer itself. If this guy could read my specification and implement a solution in such a short time, there was only one possible consequence: <strong>&#8220;Creating extension for Google Chrome is easy&#8221;</strong>.
+
+So, I tried by myself.
+
+First of all, I had a look <a href="http://code.google.com/chrome/extensions/getstarted.html" target="_blank">to the &#8220;Getting Started&#8221; section of the Chrome extensions documentation</a>. As expected, everything was extremely simple. To implement the &#8220;accesskey&#8221; shortcuts, it took me no more than five minutes. Literally. And now my Twitter page looks like:
+<p style="text-align:center;"><a href="http://aloiroberto.files.wordpress.com/2010/06/screen-shot-2010-06-11-at-11-59-19-pm.png"><img class="aligncenter size-medium wp-image-339" title="My new Twitter Home Page" src="http://aloiroberto.files.wordpress.com/2010/06/screen-shot-2010-06-11-at-11-59-19-pm.png?w=300" alt="" width="300" height="173" /></a></p>
+Can you see the pink characters close to the links? They are all available &#8220;accesskey&#8221; shortcuts, a piece of information that was already embedded in the web page but that has just been hidden. Let&#8217;s see how can we make it visible again via a brand new Google Chrome Extension.
+
+First of all, <strong>create a new folder</strong> somewhere in your hard drive and call it &#8220;shortcuts&#8221;.
+
+Every Chrome extension is characterized by a &#8220;manifest&#8221; file, written in json, reporting the &#8220;properties&#8221; of the extension itself. Inside the &#8220;shortcuts&#8221; folder, <strong>create a new file, named &#8220;manifest.json&#8221;</strong>:
+<pre>{</pre>
+<pre>  "name": "Shortcuts",</pre>
+<pre>  "version": "1.0",</pre>
+<pre>  "description": "Display the accesskey shortcuts.",</pre>
+<pre>  "content_scripts": [{</pre>
+<pre>    "matches": ["http://*/*", "https://*/*"],</pre>
+<pre>    "css": ["style.css"]</pre>
+<pre>  }]</pre>
+<pre>}</pre>
+Apart from the name, the version number and the description of the extension, you can notice a &#8220;content_scripts&#8221; property. This is used to &#8220;inject&#8221; some code automatically every time a web page is displayed. In our case, we simply want to apply some specific CSS properties to the pages. The &#8220;matches&#8221; section tells Chrome to apply the transformation to every page using the http or the https protocol.
+
+Now, we just need to <strong>create a style.css file</strong> (inside the same &#8220;shortcuts&#8221; folder) containing the needed stylistic information:
+<pre>a[accesskey]:after,</pre>
+<pre>button[accesskey]:after,</pre>
+<pre>input[accesskey]:after,</pre>
+<pre>label[accesskey]:after,</pre>
+<pre>legend[accesskey]:after,</pre>
+<pre>textarea[accesskey]:after {</pre>
+<pre>  margin-left: 0.3em;</pre>
+<pre>  color: Plum;</pre>
+<pre>  content: "[" attr(accesskey) "]";</pre>
+<pre>}</pre>
+That&#8217;s all folks. We&#8217;re done. We can just install our brand new Google Chrome Extensions by visiting the URL:
+
+<address>chrome://extension</address>and clicking on the &#8220;Load Unpacked Extension&#8221; button.
+
+Using the same strategy, it is obviously possible to apply different CSS transformations. Imagine for a second that you would like to hide all the images from a web page. A CSS like the following would do the job:
+<pre>img {</pre>
+<pre>  display: none;</pre>
+<pre>}</pre>
+Hope this help.
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Roberto Aloi</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-12T00:00:00+02:00" pubdate data-updated="true">Jun 12<span>th</span>, 2010</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://prof3ta.github.com/blog/2010/06/12/how-to-display-accesskey-shortcuts-in-google-chrome-and-much-more/" data-via="robertoaloi" data-counturl="http://prof3ta.github.com/blog/2010/06/12/how-to-display-accesskey-shortcuts-in-google-chrome-and-much-more/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2010/06/11/tryerlang-org-slides-from-the-erlang-factory/" title="Previous Post: tryerlang.org - Slides from the Erlang Factory">&laquo; tryerlang.org - Slides from the Erlang Factory</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2010/06/13/when-all-the-applications-start-crashing-on-the-iphone-solved/" title="Next Post: When all the applications start crashing on the iPhone [solved]">When all the applications start crashing on the iPhone [solved] &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/04/18/domain-renewal-group-fraud/">Domain Renewal Group Fraud</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/12/11/the-growth-of-erlang-the-stack-overflow-case-study/">The growth of Erlang: The Stack Overflow Case Study</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/11/24/how-to-manage-multiple-erlang-installations/">How to manage multiple Erlang installations</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/10/14/how-they-tried-to-fool-tryerlang-org/">How they tried to fool tryerlang.org</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/10/09/pair-programming/">Pair Programming</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("robertoaloi", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/robertoaloi" class="twitter-follow-button" data-show-count="false">Follow @robertoaloi</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Roberto Aloi -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

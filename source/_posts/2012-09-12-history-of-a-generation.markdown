@@ -2,8 +2,8 @@
 layout: post
 title: "History of a Generation"
 date: 2012-09-12 18:36
-comments: true
 categories: [Italy]
+comments: true
 ---
 I wanted to translate <a href="http://torto45.wordpress.com/2010/10/29/hello-world/" target="_blank">this blog post</a> into English, cause I believe it renders an almost perfect picture of Italy as it is today. This is a free translation and all the rights for the original blog post belong to the original author.
 

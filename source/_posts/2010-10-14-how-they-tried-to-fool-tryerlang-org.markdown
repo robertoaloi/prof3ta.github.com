@@ -1,8 +1,9 @@
---- 
+---
 layout: post
 title: "How they tried to fool tryerlang.org"
 date: 2010-10-14 00:00
-categories: [erlang, hacking, restrictions, sandbox, tryerlang] 
+categories: [erlang, hacking, restrictions, sandbox, tryerlang]
+comments: true
 ---
 
 <h2>Preface</h2>

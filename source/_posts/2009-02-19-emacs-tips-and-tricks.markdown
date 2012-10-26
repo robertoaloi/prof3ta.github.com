@@ -1,36 +1,15 @@
---- 
+---
 layout: post
 title: "Emacs Tips and Tricks"
 date: 2009-02-19 00:00
 categories: [emacs]
 ---
 
-<h2>Committing files from Emacs</h2>
+In this blog post I collect some miscellaneous Emacs tips and tricks.
 
-To commit a single file directly from Emacs, simply follow the steps below:
+<h2>Playing with Macros</h2>
 
-<ul>
-  <li><code>C-x v v</code></li>
-  <li>Include a comment</li>
-  <li><code>C-c C-c</code></li>
-</ul>
-
-<h2>Macros in Emacs</h2>
-
-You can start recording a keyboard macro by typing:
-
-<pre>C-x (</pre>
-
-Do whatever you want and stop recording with:
-
-<pre>C-x )</pre>
-
-Then, you can select a region and type:
-<pre>C-x C-k r</pre>
-
-To apply the macro to the selected region.
-
-Emacs Macros are a really powerful tool. Just think if you need to prepend/postpone a string to a group of lines, for example from:
+In Emacs, you can _record_ a set of actions that you can then apply to a selected region. As an example, let's transform the following three lines:
 
 <pre>
 First Line
@@ -38,82 +17,113 @@ Second Line
 Third Line
 </pre>
 
-To:
+into a list of items, using a macro:
 
 <pre>
-<li>First Line</li>
-<li>Second Line</li>
-<li>Third Line</li>
+- First Line
+- Second Line
+- Third Line
 </pre>
 
-<h2>Words Swapping in Emacs</h2>
+Put your cursor on the <code>First line</code>, then start recording a new keyboard macro by typing:
 
-Given the following piece of code:
+<pre>C-x (</pre>
+
+Jump to the beginning of the line (<code>C-a</code>), insert a dash followed by a space (<code>- </code>) and then move your cursor down one line, so it resides on the <code>Second Line</code>.
+
+Stop recording the macro:
+
+<pre>C-x )</pre>
+
+Now select the lines <code>Second Line</code> and <code>Third Line</code> and apply the newly recorded macro to the selected region by pressing:
+
+<pre>C-x C-k r</pre>
+
+You should now see the desired output.
+
+<h2>Swapping Words</h2>
+
+Say that you want to reverse the order of the parameter for the following function:
+
+<pre>
+foo(Second, First) -&gt;
+    ok.
+</pre>
+
+Position the cursor between the words <code>Second</code> and <code>First</code>. Then, press:
+
+<pre>M-t</pre>
+
+You should obtain the following:
 
 <pre>
 foo(First, Second) -&gt;
     ok.
 </pre>
 
-Put the cursor on the comma or on the space between <code>First</code>
-and <code>Second</code> and press:
+<h2>Swapping Lines</h2>
 
-<pre>M-t</pre>
-
-You will obtain the following:
-<pre>
-foo(Second, First) -&gt;
-    ok.
-</pre>
-
-<h2>Words Swapping in Emacs</h2>
-
-Given the following lines of code:
+Given the following two lines:
 
 <pre>
-First Line
 Second Line
+First Line
 </pre>
 
-Put the cursor at the beginning of the second line and press:
+Put the cursor at the beginning of <code>First Line</code> and press:
+
 <pre>C-x C-t</pre>
 
-You will get:
+You should get:
+
 <pre>
-Second Line
 First Line
+Second Line
 </pre>
 
-<h2>Running Shell Commands within Emacs</h2>
+<h2>Version Control</h2>
 
-If you want to run a shell command within Emacs, you can simply type:
-<pre>M-!</pre>
-If you want to include the output into the current buffer, then:
-<pre>C-u M-!</pre>
+Emacs has support for the most common Version Control systems (e.g. _SVN_).
 
-<h2>Multiple paste</h2>
+To check-in a single file directly from Emacs, simply follow the steps below:
 
-Sometimes you want to paste some old content from the clipboard, instead of the last copied thing.
-In this case, just paste as usual:
-<pre>C-y</pre>
+* Press <code>C-x v v</code>
+* Write a meaningful _change comment_
+* Press <code>C-c C-c</code>
 
-Then, browse the clipboard history by typing:
-<pre>M-y</pre>
+To revert changes for the current buffer:
 
-<h2>SVN revert</h2>
-
-If you want to revert your changes to the last revision, just type:
 <code>C-x v u</code>
 
-<h2>SVN diff</h2>
+To see the differences for a buffer before committing it:
 
-If you want to see the differences for a buffer before committing it, just type:
 <code>C-x v =</code>
 
-<h2>Numbered lists</h2>
+<h2>Executing a Shell Command</h2>
 
-You have a list of items that you would like to convert into a
-numbered list. In other words, you want to transform the following text:
+If you want to execute a shell command within Emacs, you can simply type:
+
+<pre>M-!</pre>
+
+If you want to include the output into the current buffer, then:
+
+<pre>C-u M-!</pre>
+
+<h2>Clipboard History</h2>
+
+Emacs keeps a clipboard history, allowing you to paste old clipboard entries. To utilize this function:
+
+Press the following to paste:
+
+<pre>C-y</pre>
+
+And then browse the clipboard history by repeatedly typing:
+
+<pre>M-y</pre>
+
+<h2>Create a Numbered List</h2>
+
+Say that you have a list of items that you want to convert into a numbered list:
 
 <pre>
 first
@@ -121,26 +131,34 @@ second
 third
 </pre>
 
-into:
-
 <pre>
 1. first
 2. second
 3. third
 </pre>
 
-There are many ways to achieve this, but one is to use <a
+There are many ways to achieve this. One is to use <a
 href="http://www.gnu.org/software/emacs/manual/html_node/emacs/Keyboard-Macro-Counter.html#Keyboard-Macro-Counter"
 target="_blank">the Emacs Keyboard Macro Counter</a>.
 
-Simply follow the steps below:
+Position the cursor one line _above_ your list and start registering a new macro:
 
-* Put the cursor one line _above_ your list.
-* Start a macro by pressing <code>F3</code>
-* Insert the counter value: `C-x C-k C-i`. A <code>0</code> will appear
-* Insert a dot and a space: <code>. </code>
-* Move the cursor to the next line
-* Stop the macro registration by pressing <code>F4</code>
-* Select the itmes that you want to convert into a numbered list
-* Press: <code>M-x apply-macro-to-region-lines</code>
-* You can delete the <code>0</code> you added on the top and enjoy :)
+<pre>C-x (</pre>
+
+Insert a new counter value:
+
+<pre>C-x C-k C-i.</pre>
+
+A <code>0</code> will appear. Append a dot and a space:
+
+<pre>. </pre>
+
+Move the cursor to the next line and stop registering the macro:
+
+<pre>C-x )</pre>
+
+Select the list of items and apply the macro to the selected region:
+
+<pre>C-x C-k r</pre>
+
+Delete the <code>0</code> that you added at the beginning of the list and enjoy your brand new numbered list.

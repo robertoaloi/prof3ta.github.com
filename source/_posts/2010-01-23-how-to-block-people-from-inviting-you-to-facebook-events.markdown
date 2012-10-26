@@ -3,6 +3,7 @@ layout: post
 title: "How to block people from inviting you to Facebook events"
 date: 2010-01-23 00:00
 categories: [facebook, tips and tricks]
+published: false
 ---
 <a href="www.facebook.com">
 <img class="aligncenter size-medium wp-image-256" title="Facebook Logo" src="http://aloiroberto.files.wordpress.com/2010/01/facebook.jpg?w=300" alt="Facebook Logo" width="300" height="112" /></a>

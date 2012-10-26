@@ -3,6 +3,7 @@ layout: post
 title: "How to manage multiple Erlang installations on the same machine"
 date: 2010-11-24 00:00
 categories: [erlang, howto, tutorial]
+published: false
 ---
 Sometimes you need to switch between different versions of the Erlang
 runtime system, for example because two of the projects you're

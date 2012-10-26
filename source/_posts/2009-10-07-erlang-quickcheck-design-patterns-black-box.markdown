@@ -3,6 +3,7 @@ layout: post
 title: "Erlang Quickcheck Design Patterns - Black Box"
 date: 2009-10-07 00:00
 categories: [erlang, software engineering, quickcheck, testing]
+published: false
 ---
 <h3>Name</h3>
 

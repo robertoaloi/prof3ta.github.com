@@ -4,6 +4,7 @@ title: "PHP and Emacs. How to Browse Documentation."
 date: 2009-12-09 00:00
 categories: [browse, doc, documentation, emacs, lisp, mode, php,
 php-mode]
+published: false
 ---
 As an Erlang developer, I spend most of my development time on
 Emacs. From time to time I have to hack some PHP code (it's a dirty

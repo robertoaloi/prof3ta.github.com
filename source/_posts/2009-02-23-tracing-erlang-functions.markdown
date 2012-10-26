@@ -1,8 +1,9 @@
---- 
+---
 layout: post
 title: "Tracing Erlang Functions"
 date: 2009-02-23 00:00
-categories: [debug, erlang, trace] 
+categories: [debug, erlang, trace]
+published: false
 ---
 Tracing Erlang functions for debugging purposes is probably simpler
 than you could even imagine. Let's say you wrote the module below and
@@ -28,7 +29,7 @@ expected:
 9
 </pre>
 
-Now start the tracer wuth the following instruction:
+Now start the tracer with the following instruction:
 
 <pre>
 &gt; dbg:tracer().

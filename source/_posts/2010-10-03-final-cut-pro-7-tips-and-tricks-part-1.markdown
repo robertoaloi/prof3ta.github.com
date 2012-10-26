@@ -3,6 +3,7 @@ layout: post
 title: "Final Cut Pro 7 - Tips and Tricks"
 date: 2010-10-03 00:00
 categories: [apple, mac, osx, final cut, final cut 7 pro, tips, tricks, video editing]
+published: false
 ---
 TODO
 <a href="http://aloiroberto.files.wordpress.com/2010/10/finalcut.jpg"><img class="aligncenter size-full wp-image-370" title="Final Cut Pro 7" src="http://aloiroberto.files.wordpress.com/2010/10/finalcut.jpg" alt="Final Cut Pro 7 Logo" width="180" height="189" /></a></p>

@@ -3,6 +3,7 @@ layout: post
 title: "tryerlang.org - Slides from the Erlang Factory"
 date: 2010-06-11 0:00
 categories: [aloi, Erlang, erlang factory, erlangfactory, roberto, roberto aloi, try erlang, tryerlang, tryerlang.org]
+published: false
 ---
 
 TODO

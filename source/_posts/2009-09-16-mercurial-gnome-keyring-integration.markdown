@@ -2,6 +2,7 @@
 layout: post
 title: "Mercurial - Gnome Keyring Integration"
 categories: [mercurial, hg, gnome, productivity]
+published: false
 ---
 Don't know about you, but I find really boring having to insert my
 password over and over again when pulling hg-based projects.

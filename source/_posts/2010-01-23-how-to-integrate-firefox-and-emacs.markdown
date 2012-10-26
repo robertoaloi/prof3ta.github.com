@@ -3,6 +3,7 @@ layout: post
 title: "How to integrate Firefox and Emacs"
 date: 2010-01-23 00:00
 categories: [emacs, firefox, edit, howto, textarea, textbox, productivity]
+published: false
 ---
 <p style="text-align:center;"><a href="http://www.gnu.org/software/emacs/"><img class="aligncenter size-medium wp-image-250" title="Emacs Logo" src="http://aloiroberto.files.wordpress.com/2010/01/emacs.png?w=300" alt="Emacs Logo" width="240" height="196" /></a></p>
 Sometimes, when you edit a <strong>textarea</strong> on a web page (for example, to write a new post on your blog), you would really like to use an external text editor for that.

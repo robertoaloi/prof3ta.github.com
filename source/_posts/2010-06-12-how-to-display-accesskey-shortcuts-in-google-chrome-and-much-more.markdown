@@ -5,6 +5,7 @@ more)"
 date: 2010-06-12 00:00
 categories: [access key, accesskey, chrome, chromium, extension, google,
 guide, howto, shortcut, shortcuts, tutorial, accessibility]
+published: false
 ---
 
 Have you ever heard about <a

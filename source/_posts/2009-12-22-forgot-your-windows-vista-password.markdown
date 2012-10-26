@@ -2,7 +2,8 @@
 layout: post
 title: "Forgot your Windows Vista Password?"
 date: 2009-12-22 00:00
-categories: [tips and tricks, windows] 
+categories: [tips and tricks, windows]
+published: false
 ---
 Sometimes it can happen that you forget your password for your Windows Vista account.
 

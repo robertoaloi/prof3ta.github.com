@@ -3,6 +3,7 @@ layout: post
 title: "The v(N) function in Erlang"
 date: 2009-02-20 00:00
 categories: [erlang, shell, productivity]
+published: false
 ---
 The Erlang shell offers many helper functions, which allow you to
 interact with the commands history. A useful function is

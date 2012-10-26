@@ -4,7 +4,8 @@ title: "When all the applications start crashing on the iPhone
 [solved]"
 date: 2010-06-13 00:00
 categories: [bug, crash, error, hack, howto, iphone, problem, issue,
-tricks, workaround] 
+tricks, workaround]
+published: false
 ---
 It happened to me several times to encounter a tedious bug on my iPhone.
 

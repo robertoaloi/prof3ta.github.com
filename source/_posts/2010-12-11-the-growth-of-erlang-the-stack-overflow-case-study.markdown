@@ -3,6 +3,7 @@ layout: post
 title: "The growth of Erlang: The Stack Overflow Case Study"
 date: 2010-12-11 00:00
 categories: [erlang]
+published: false
 ---
 
 #  image_url: #http://aloiroberto.files.wordpress.com/2010/12/screen-shot-2010-12-11-at-2-40-55-pm1.png

@@ -3,6 +3,7 @@ layout: post
 title: "The Domain Renewal Group Fraud"
 date: 2011-04-18 00:00
 categories: [IT, frauds]
+published: false
 ---
 A couple of days ago the following letter has been delivered to my British postal address:
 

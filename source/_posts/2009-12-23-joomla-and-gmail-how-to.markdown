@@ -3,6 +3,7 @@ layout: post
 title: "Joomla and Gmail How To"
 date: 2009-12-23 00:00
 categories: [joomla, gmail, php]
+published: false
 ---
 A couple of weeks ago, I decided to use Gmail as SMTP server to send
 emails from my Joomla website. Here is explained what I did to make

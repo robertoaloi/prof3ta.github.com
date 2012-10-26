@@ -3,6 +3,7 @@ layout: post
 title: "How to recursively set UNIX permissions for files and directories"
 date: 2009-12-04 00:00
 categories: [unix, sysadmin, cli, tips and tricks]
+published: false
 ---
 <a href="http://aloiroberto.files.wordpress.com/2009/12/bsd-linux-devil.jpg"><img class="aligncenter size-medium wp-image-160" title="BSD Devil" src="http://aloiroberto.files.wordpress.com/2009/12/bsd-linux-devil.jpg?w=300" alt="" width="300" height="225" /></a>
 

@@ -3,6 +3,7 @@ layout: post
 title: "Mercurial - Verbose Pull"
 date: 2009-09-16
 categories: [mercurial, tips and tricks, productivity]
+published: false
 ---
 Are you pulling from a Mercurial repository and it's taking too long?
 Do you want to know which files are being pulled into your local

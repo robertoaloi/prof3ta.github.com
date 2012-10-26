@@ -2,7 +2,8 @@
 layout: post
 title: "Introducing the Highcharts-php Library"
 date: 2010-02-04 00:00
-categories: [php, js] 
+categories: [php, js]
+published: false
 ---
 
 You might have heard about <a

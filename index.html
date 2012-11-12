@@ -9,7 +9,7 @@
   <meta name="author" content="Roberto Aloi">
 
   
-  <meta name="description" content="I wanted to translate this blog post into English, cause I believe it renders an almost perfect picture of Italy as it is today. This is a free &hellip;">
+  <meta name="description" content="I&#8217;ve recently bumped into the following useful gist, which I decided to share with all of you. It&#8217;s possible to instruct git to fetch &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,64 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/11/12/checkout-github-pull-requests-locally/">How to Checkout GitHub Pull Requests Locally</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-12T10:36:00+01:00" pubdate data-updated="true">Nov 12<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&#8217;ve recently bumped into the following useful <a href="https://gist.github.com/3342247" target="_blank">gist</a>, which I decided to share with all of you.</p>
+
+<p>It&#8217;s possible to instruct git to fetch pull requests together with the other project branches. Simply open the <code>.git/config</code> file for your project and add the following line under the <code>[remote "origin"]</code> section:</p>
+
+<pre><code>fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
+</code></pre>
+
+<p>To enable this behaviour for all of your git projects, simply run:</p>
+
+<pre><code>git config --global --add remote.origin.fetch "+refs/pull/*/head:refs/remotes/origin/pr/*"
+</code></pre>
+
+<p>To fetch all the pull requests for a project:</p>
+
+<pre><code>git fetch origin
+</code></pre>
+
+<p>To checkout a specific pull request (say, #53):</p>
+
+<pre><code>git checkout pr/53
+</code></pre>
+
+<p>Enjoy!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -595,15 +653,15 @@ target="_blank">the Emacs Keyboard Macro Counter</a>.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/11/12/checkout-github-pull-requests-locally/">How to Checkout GitHub Pull Requests Locally</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/09/12/history-of-a-generation/">History of a Generation</a>
       </li>
     
       <li class="post">
         <a href="/blog/2010/10/14/how-they-tried-to-fool-tryerlang-org/">How they tried to fool tryerlang.org</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2009/02/19/emacs-tips-and-tricks/">Emacs Tips and Tricks</a>
       </li>
     
   </ul>

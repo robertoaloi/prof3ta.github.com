@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: erlang - Roberto Aloi</title>
+  <title>How to Checkout GitHub Pull Requests Locally - Roberto Aloi</title>
   <meta name="author" content="Roberto Aloi">
 
   
-  <meta name="description" content="Category: erlang">
+  <meta name="description" content="I&#8217;ve recently bumped into the following useful gist, which I decided to share with all of you. It&#8217;s possible to instruct git to fetch &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://prof3ta.github.comblog/categories/erlang/">
+  <link rel="canonical" href="http://prof3ta.github.com/blog/2012/11/12/checkout-github-pull-requests-locally/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -76,36 +76,113 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Erlang</h1>
+    
+      <h1 class="entry-title">How to Checkout GitHub Pull Requests Locally</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-12T10:36:00+01:00" pubdate data-updated="true">Nov 12<span>th</span>, 2012</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>I&#8217;ve recently bumped into the following useful <a href="https://gist.github.com/3342247" target="_blank">gist</a>, which I decided to share with all of you.</p>
 
-  
-  <h2>2010</h2>
+<p>It&#8217;s possible to instruct git to fetch pull requests together with the other project branches. Simply open the <code>.git/config</code> file for your project and add the following line under the <code>[remote "origin"]</code> section:</p>
 
-<article>
-  
-<h1><a href="/blog/2010/10/14/how-they-tried-to-fool-tryerlang-org/">How they tried to fool tryerlang.org</a></h1>
-<time datetime="2010-10-14T00:00:00+02:00" pubdate><span class='month'>Oct</span> <span class='day'>14</span> <span class='year'>2010</span></time>
+<pre><code>fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
+</code></pre>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/erlang/'>erlang</a>, <a class='category' href='/blog/categories/hacking/'>hacking</a>, <a class='category' href='/blog/categories/restrictions/'>restrictions</a>, <a class='category' href='/blog/categories/sandbox/'>sandbox</a>, <a class='category' href='/blog/categories/tryerlang/'>tryerlang</a></span>
-</footer>
+<p>To enable this behaviour for all of your git projects, simply run:</p>
 
+<pre><code>git config --global --add remote.origin.fetch "+refs/pull/*/head:refs/remotes/origin/pr/*"
+</code></pre>
 
-</article>
+<p>To fetch all the pull requests for a project:</p>
 
+<pre><code>git fetch origin
+</code></pre>
+
+<p>To checkout a specific pull request (say, #53):</p>
+
+<pre><code>git checkout pr/53
+</code></pre>
+
+<p>Enjoy!</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Roberto Aloi</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-12T10:36:00+01:00" pubdate data-updated="true">Nov 12<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/git/'>git</a>, <a class='category' href='/blog/categories/github/'>github</a>, <a class='category' href='/blog/categories/productivity/'>productivity</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://prof3ta.github.com/blog/2012/11/12/checkout-github-pull-requests-locally/" data-via="robertoaloi" data-counturl="http://prof3ta.github.com/blog/2012/11/12/checkout-github-pull-requests-locally/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/09/12/history-of-a-generation/" title="Previous Post: History of a Generation">&laquo; History of a Generation</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -179,7 +256,10 @@
       var disqus_shortname = 'robertoaloi';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://prof3ta.github.com/blog/2012/11/12/checkout-github-pull-requests-locally/';
+        var disqus_url = 'http://prof3ta.github.com/blog/2012/11/12/checkout-github-pull-requests-locally/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

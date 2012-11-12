@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: github | Roberto Aloi]]></title>
+  <link href="http://prof3ta.github.com/blog/categories/github/atom.xml" rel="self"/>
+  <link href="http://prof3ta.github.com/"/>
+  <updated>2012-11-12T10:49:53+01:00</updated>
+  <id>http://prof3ta.github.com/</id>
+  <author>
+    <name><![CDATA[Roberto Aloi]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[How to Checkout GitHub Pull Requests Locally]]></title>
+    <link href="http://prof3ta.github.com/blog/2012/11/12/checkout-github-pull-requests-locally/"/>
+    <updated>2012-11-12T10:36:00+01:00</updated>
+    <id>http://prof3ta.github.com/blog/2012/11/12/checkout-github-pull-requests-locally</id>
+    <content type="html"><![CDATA[<p>I've recently bumped into the following useful <a href="https://gist.github.com/3342247" target="_blank">gist</a>, which I decided to share with all of you.</p>
+
+<p>It's possible to instruct git to fetch pull requests together with the other project branches. Simply open the <code>.git/config</code> file for your project and add the following line under the <code>[remote "origin"]</code> section:</p>
+
+<pre><code>fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
+</code></pre>
+
+<p>To enable this behaviour for all of your git projects, simply run:</p>
+
+<pre><code>git config --global --add remote.origin.fetch "+refs/pull/*/head:refs/remotes/origin/pr/*"
+</code></pre>
+
+<p>To fetch all the pull requests for a project:</p>
+
+<pre><code>git fetch origin
+</code></pre>
+
+<p>To checkout a specific pull request (say, #53):</p>
+
+<pre><code>git checkout pr/53
+</code></pre>
+
+<p>Enjoy!</p>
+]]></content>
+  </entry>
+  
+</feed>

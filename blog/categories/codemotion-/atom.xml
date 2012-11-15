@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: codemotion, | Roberto Aloi]]></title>
-  <link href="http://prof3ta.github.com/blog/categories/codemotion-/atom.xml" rel="self"/>
-  <link href="http://prof3ta.github.com/"/>
-  <updated>2012-11-15T12:06:44+01:00</updated>
-  <id>http://prof3ta.github.com/</id>
+  <link href="http://roberto-aloi.com/blog/categories/codemotion-/atom.xml" rel="self"/>
+  <link href="http://roberto-aloi.com/"/>
+  <updated>2012-11-15T17:39:26+01:00</updated>
+  <id>http://roberto-aloi.com/</id>
   <author>
     <name><![CDATA[Roberto Aloi]]></name>
     
@@ -15,12 +15,12 @@
   
   <entry>
     <title type="html"><![CDATA[Codemotion Venice 2012: Erlang and the Cloud]]></title>
-    <link href="http://prof3ta.github.com/blog/2012/11/15/codemotion-venice-2012-erlang-and-the-cloud/"/>
+    <link href="http://roberto-aloi.com/blog/2012/11/15/codemotion-venice-2012-erlang-and-the-cloud/"/>
     <updated>2012-11-15T11:09:00+01:00</updated>
-    <id>http://prof3ta.github.com/blog/2012/11/15/codemotion-venice-2012-erlang-and-the-cloud</id>
+    <id>http://roberto-aloi.com/blog/2012/11/15/codemotion-venice-2012-erlang-and-the-cloud</id>
     <content type="html"><![CDATA[<div style="text-align:center">
 <a href="http://www.codemotion.it" target="_blank">
-<img src="http://prof3ta.github.com/images/codemotion-logo.png" alt="Codemotion Venice 2012" />
+<img src="http://roberto-aloi.com/images/codemotion-logo.png" alt="Codemotion Venice 2012" />
 </a>
 </div>
 
@@ -47,8 +47,8 @@
 <h3>3. Giveaways</h3>
 
 <div style="text-align:center">
-<a href="http://prof3ta.github.com/images/codemotion-giveaways.jpg" target="_blank">
-<img src="http://prof3ta.github.com/images/codemotion-giveaways.jpg" alt="Erlang Giveaways" />
+<a href="http://roberto-aloi.com/images/codemotion-giveaways.jpg" target="_blank">
+<img src="http://roberto-aloi.com/images/codemotion-giveaways.jpg" alt="Erlang Giveaways" />
 </a>
 </div>
 

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Roberto Aloi]]></title>
-  <link href="http://prof3ta.github.com/atom.xml" rel="self"/>
-  <link href="http://prof3ta.github.com/"/>
-  <updated>2012-11-15T12:06:44+01:00</updated>
-  <id>http://prof3ta.github.com/</id>
+  <link href="http://roberto-aloi.com/atom.xml" rel="self"/>
+  <link href="http://roberto-aloi.com/"/>
+  <updated>2012-11-15T17:39:26+01:00</updated>
+  <id>http://roberto-aloi.com/</id>
   <author>
     <name><![CDATA[Roberto Aloi]]></name>
     
@@ -15,12 +15,12 @@
   
   <entry>
     <title type="html"><![CDATA[Codemotion Venice 2012: Erlang and the Cloud]]></title>
-    <link href="http://prof3ta.github.com/blog/2012/11/15/codemotion-venice-2012-erlang-and-the-cloud/"/>
+    <link href="http://roberto-aloi.com/blog/2012/11/15/codemotion-venice-2012-erlang-and-the-cloud/"/>
     <updated>2012-11-15T11:09:00+01:00</updated>
-    <id>http://prof3ta.github.com/blog/2012/11/15/codemotion-venice-2012-erlang-and-the-cloud</id>
+    <id>http://roberto-aloi.com/blog/2012/11/15/codemotion-venice-2012-erlang-and-the-cloud</id>
     <content type="html"><![CDATA[<div style="text-align:center">
 <a href="http://www.codemotion.it" target="_blank">
-<img src="http://prof3ta.github.com/images/codemotion-logo.png" alt="Codemotion Venice 2012" />
+<img src="http://roberto-aloi.com/images/codemotion-logo.png" alt="Codemotion Venice 2012" />
 </a>
 </div>
 
@@ -47,8 +47,8 @@
 <h3>3. Giveaways</h3>
 
 <div style="text-align:center">
-<a href="http://prof3ta.github.com/images/codemotion-giveaways.jpg" target="_blank">
-<img src="http://prof3ta.github.com/images/codemotion-giveaways.jpg" alt="Erlang Giveaways" />
+<a href="http://roberto-aloi.com/images/codemotion-giveaways.jpg" target="_blank">
+<img src="http://roberto-aloi.com/images/codemotion-giveaways.jpg" alt="Erlang Giveaways" />
 </a>
 </div>
 
@@ -61,9 +61,9 @@
   
   <entry>
     <title type="html"><![CDATA[How to Checkout GitHub Pull Requests Locally]]></title>
-    <link href="http://prof3ta.github.com/blog/2012/11/12/checkout-github-pull-requests-locally/"/>
+    <link href="http://roberto-aloi.com/blog/2012/11/12/checkout-github-pull-requests-locally/"/>
     <updated>2012-11-12T10:36:00+01:00</updated>
-    <id>http://prof3ta.github.com/blog/2012/11/12/checkout-github-pull-requests-locally</id>
+    <id>http://roberto-aloi.com/blog/2012/11/12/checkout-github-pull-requests-locally</id>
     <content type="html"><![CDATA[<p>I&#8217;ve recently bumped into the following useful <a href="https://gist.github.com/3342247" target="_blank">gist</a>, which I decided to share with all of you.</p>
 
 <p>It&#8217;s possible to instruct git to fetch pull requests together with the other project branches. Simply open the <code>.git/config</code> file for your project and add the following line under the <code>[remote "origin"]</code> section:</p>
@@ -92,9 +92,9 @@
   
   <entry>
     <title type="html"><![CDATA[History of a Generation]]></title>
-    <link href="http://prof3ta.github.com/blog/2012/09/12/history-of-a-generation/"/>
+    <link href="http://roberto-aloi.com/blog/2012/09/12/history-of-a-generation/"/>
     <updated>2012-09-12T18:36:00+02:00</updated>
-    <id>http://prof3ta.github.com/blog/2012/09/12/history-of-a-generation</id>
+    <id>http://roberto-aloi.com/blog/2012/09/12/history-of-a-generation</id>
     <content type="html"><![CDATA[<p>I wanted to translate <a href="http://torto45.wordpress.com/2010/10/29/hello-world/" target="_blank">this blog post</a> into English, cause I believe it renders an almost perfect picture of Italy as it is today. This is a free translation and all the rights for the original blog post belong to the original author.</p>
 
 <p>When I was a child, I was told:</p>
@@ -135,9 +135,9 @@
   
   <entry>
     <title type="html"><![CDATA[How they tried to fool tryerlang.org]]></title>
-    <link href="http://prof3ta.github.com/blog/2010/10/14/how-they-tried-to-fool-tryerlang-org/"/>
+    <link href="http://roberto-aloi.com/blog/2010/10/14/how-they-tried-to-fool-tryerlang-org/"/>
     <updated>2010-10-14T00:00:00+02:00</updated>
-    <id>http://prof3ta.github.com/blog/2010/10/14/how-they-tried-to-fool-tryerlang-org</id>
+    <id>http://roberto-aloi.com/blog/2010/10/14/how-they-tried-to-fool-tryerlang-org</id>
     <content type="html"><![CDATA[<h2>Preface</h2>
 
 
@@ -297,9 +297,9 @@ pigeon
   
   <entry>
     <title type="html"><![CDATA[Emacs Tips and Tricks]]></title>
-    <link href="http://prof3ta.github.com/blog/2009/02/19/emacs-tips-and-tricks/"/>
+    <link href="http://roberto-aloi.com/blog/2009/02/19/emacs-tips-and-tricks/"/>
     <updated>2009-02-19T00:00:00+01:00</updated>
-    <id>http://prof3ta.github.com/blog/2009/02/19/emacs-tips-and-tricks</id>
+    <id>http://roberto-aloi.com/blog/2009/02/19/emacs-tips-and-tricks</id>
     <content type="html"><![CDATA[<p>In this blog post I collect some miscellaneous Emacs tips and tricks.</p>
 
 <h2>Playing with Macros</h2>

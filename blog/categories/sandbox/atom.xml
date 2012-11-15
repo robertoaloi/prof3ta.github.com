@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: sandbox | Roberto Aloi]]></title>
-  <link href="http://prof3ta.github.com/blog/categories/sandbox/atom.xml" rel="self"/>
-  <link href="http://prof3ta.github.com/"/>
-  <updated>2012-11-15T12:06:44+01:00</updated>
-  <id>http://prof3ta.github.com/</id>
+  <link href="http://roberto-aloi.com/blog/categories/sandbox/atom.xml" rel="self"/>
+  <link href="http://roberto-aloi.com/"/>
+  <updated>2012-11-15T17:39:26+01:00</updated>
+  <id>http://roberto-aloi.com/</id>
   <author>
     <name><![CDATA[Roberto Aloi]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[How they tried to fool tryerlang.org]]></title>
-    <link href="http://prof3ta.github.com/blog/2010/10/14/how-they-tried-to-fool-tryerlang-org/"/>
+    <link href="http://roberto-aloi.com/blog/2010/10/14/how-they-tried-to-fool-tryerlang-org/"/>
     <updated>2010-10-14T00:00:00+02:00</updated>
-    <id>http://prof3ta.github.com/blog/2010/10/14/how-they-tried-to-fool-tryerlang-org</id>
+    <id>http://roberto-aloi.com/blog/2010/10/14/how-they-tried-to-fool-tryerlang-org</id>
     <content type="html"><![CDATA[<h2>Preface</h2>
 
 

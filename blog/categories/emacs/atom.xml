@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: emacs | Roberto Aloi]]></title>
-  <link href="http://prof3ta.github.com/blog/categories/emacs/atom.xml" rel="self"/>
-  <link href="http://prof3ta.github.com/"/>
-  <updated>2012-11-15T12:06:44+01:00</updated>
-  <id>http://prof3ta.github.com/</id>
+  <link href="http://roberto-aloi.com/blog/categories/emacs/atom.xml" rel="self"/>
+  <link href="http://roberto-aloi.com/"/>
+  <updated>2012-11-15T17:39:26+01:00</updated>
+  <id>http://roberto-aloi.com/</id>
   <author>
     <name><![CDATA[Roberto Aloi]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Emacs Tips and Tricks]]></title>
-    <link href="http://prof3ta.github.com/blog/2009/02/19/emacs-tips-and-tricks/"/>
+    <link href="http://roberto-aloi.com/blog/2009/02/19/emacs-tips-and-tricks/"/>
     <updated>2009-02-19T00:00:00+01:00</updated>
-    <id>http://prof3ta.github.com/blog/2009/02/19/emacs-tips-and-tricks</id>
+    <id>http://roberto-aloi.com/blog/2009/02/19/emacs-tips-and-tricks</id>
     <content type="html"><![CDATA[<p>In this blog post I collect some miscellaneous Emacs tips and tricks.</p>
 
 <h2>Playing with Macros</h2>

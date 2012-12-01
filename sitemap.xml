@@ -23,15 +23,21 @@
         <lastmod>2012-11-15T12:02:07+01:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://roberto-aloi.com/blog/2012/11/17/slides-from-my-erlang-codemotion-talk-available-online/
+        </loc>
+        <lastmod>2012-12-01T16:42:46+01:00</lastmod>
+    </url>
+    <url>
         <loc>http://roberto-aloi.com/about/</loc>
         <lastmod>2012-10-23T11:14:33+02:00</lastmod>
     </url>
     <url>
         <loc>http://roberto-aloi.com/blog/archives/</loc>
-        <lastmod>2012-11-15T12:02:07+01:00</lastmod>
+        <lastmod>2012-12-01T16:42:46+01:00</lastmod>
     </url>
     <url>
         <loc>http://roberto-aloi.com/</loc>
-        <lastmod>2012-11-15T12:02:07+01:00</lastmod>
+        <lastmod>2012-12-01T16:42:46+01:00</lastmod>
     </url>
 </urlset>

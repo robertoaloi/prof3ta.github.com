@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: hacking - Roberto Aloi</title>
+  <title>Roberto Aloi</title>
   <meta name="author" content="Roberto Aloi">
 
   
-  <meta name="description" content="Category: hacking">
+  <meta name="description" content="In this blog post I collect some miscellaneous Emacs tips and tricks. Playing with Macros In Emacs, you can record a set of actions that you can then &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://roberto-aloi.comblog/categories/hacking/">
+  <link rel="canonical" href="http://roberto-aloi.com/blog/page/2/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -75,40 +75,251 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div>
-<article role="article">
+      <div class="blog-index">
   
+  
+  
+    <article>
+      
   <header>
-    <h1 class="entry-title">Category: Hacking</h1>
+    
+      <h1 class="entry-title"><a href="/blog/2009/02/19/emacs-tips-and-tricks/">Emacs Tips and Tricks</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-02-19T00:00:00+01:00" pubdate data-updated="true">Feb 19<span>th</span>, 2009</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
+
+
+  <div class="entry-content"><p>In this blog post I collect some miscellaneous Emacs tips and tricks.</p>
+
+<h2>Playing with Macros</h2>
+
+
+<p>In Emacs, you can <em>record</em> a set of actions that you can then apply to a selected region. As an example, let&#8217;s transform the following three lines:</p>
+
+<pre>
+First Line
+Second Line
+Third Line
+</pre>
+
+
+<p>into a list of items, using a macro:</p>
+
+<pre>
+- First Line
+- Second Line
+- Third Line
+</pre>
+
+
+<p>Put your cursor on the <code>First line</code>, then start recording a new keyboard macro by typing:</p>
+
+<pre>C-x (</pre>
+
+
+<p>Jump to the beginning of the line (<code>C-a</code>), insert a dash followed by a space (<code>- </code>) and then move your cursor down one line, so it resides on the <code>Second Line</code>.</p>
+
+<p>Stop recording the macro:</p>
+
+<pre>C-x )</pre>
+
+
+<p>Now select the lines <code>Second Line</code> and <code>Third Line</code> and apply the newly recorded macro to the selected region by pressing:</p>
+
+<pre>C-x C-k r</pre>
+
+
+<p>You should now see the desired output.</p>
+
+<h2>Swapping Words</h2>
+
+
+<p>Say that you want to reverse the order of the parameter for the following function:</p>
+
+<pre>
+foo(Second, First) -&gt;
+    ok.
+</pre>
+
+
+<p>Position the cursor between the words <code>Second</code> and <code>First</code>. Then, press:</p>
+
+<pre>M-t</pre>
+
+
+<p>You should obtain the following:</p>
+
+<pre>
+foo(First, Second) -&gt;
+    ok.
+</pre>
 
 
 
-  
-  <h2>2010</h2>
 
-<article>
-  
-<h1><a href="/blog/2010/10/14/how-they-tried-to-fool-tryerlang-org/">How they tried to fool tryerlang.org</a></h1>
-<time datetime="2010-10-14T00:00:00+02:00" pubdate><span class='month'>Oct</span> <span class='day'>14</span> <span class='year'>2010</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/erlang/'>erlang</a>, <a class='category' href='/blog/categories/hacking/'>hacking</a>, <a class='category' href='/blog/categories/restrictions/'>restrictions</a>, <a class='category' href='/blog/categories/sandbox/'>sandbox</a>, <a class='category' href='/blog/categories/tryerlang/'>tryerlang</a></span>
-</footer>
+<h2>Swapping Lines</h2>
 
 
-</article>
+<p>Given the following two lines:</p>
 
+<pre>
+Second Line
+First Line
+</pre>
+
+
+<p>Put the cursor at the beginning of <code>First Line</code> and press:</p>
+
+<pre>C-x C-t</pre>
+
+
+<p>You should get:</p>
+
+<pre>
+First Line
+Second Line
+</pre>
+
+
+
+
+<h2>Version Control</h2>
+
+
+<p>Emacs has support for the most common Version Control systems (e.g. <em>SVN</em>).</p>
+
+<p>To check-in a single file directly from Emacs, simply follow the steps below:</p>
+
+<ul>
+<li>Press <code>C-x v v</code></li>
+<li>Write a meaningful <em>change comment</em></li>
+<li>Press <code>C-c C-c</code></li>
+</ul>
+
+
+<p>To revert changes for the current buffer:</p>
+
+<p><code>C-x v u</code></p>
+
+<p>To see the differences for a buffer before committing it:</p>
+
+<p><code>C-x v =</code></p>
+
+<h2>Executing a Shell Command</h2>
+
+
+<p>If you want to execute a shell command within Emacs, you can simply type:</p>
+
+<pre>M-!</pre>
+
+
+<p>If you want to include the output into the current buffer, then:</p>
+
+<pre>C-u M-!</pre>
+
+
+
+
+<h2>Clipboard History</h2>
+
+
+<p>Emacs keeps a clipboard history, allowing you to paste old clipboard entries. To utilize this function:</p>
+
+<p>Press the following to paste:</p>
+
+<pre>C-y</pre>
+
+
+<p>And then browse the clipboard history by repeatedly typing:</p>
+
+<pre>M-y</pre>
+
+
+
+
+<h2>Create a Numbered List</h2>
+
+
+<p>Say that you have a list of items that you want to convert into a numbered list:</p>
+
+<pre>
+first
+second
+third
+</pre>
+
+
+
+
+<pre>
+1. first
+2. second
+3. third
+</pre>
+
+
+<p>There are many ways to achieve this. One is to use <a
+href="http://www.gnu.org/software/emacs/manual/html_node/emacs/Keyboard-Macro-Counter.html#Keyboard-Macro-Counter"
+target="_blank">the Emacs Keyboard Macro Counter</a>.</p>
+
+<p>Position the cursor one line <em>above</em> your list and start registering a new macro:</p>
+
+<pre>C-x (</pre>
+
+
+<p>Insert a new counter value:</p>
+
+<pre>C-x C-k C-i.</pre>
+
+
+<p>A <code>0</code> will appear. Append a dot and a space:</p>
+
+<pre>. </pre>
+
+
+<p>Move the cursor to the next line and stop registering the macro:</p>
+
+<pre>C-x )</pre>
+
+
+<p>Select the list of items and apply the macro to the selected region:</p>
+
+<pre>C-x C-k r</pre>
+
+
+<p>Delete the <code>0</code> that you added at the beginning of the list and enjoy your brand new numbered list.</p>
 </div>
-
   
-</article>
+  
 
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/">Newer &rarr;</a>
+    
+  </div>
 </div>
-
 <aside class="sidebar">
   
     <section>
@@ -127,7 +338,7 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2012/11/17/slides-from-my-erlang-codemotion-talk-available-online/">'Erlang and the Cloud' Codemotion slides available online</a>
+        <a href="/blog/2012/11/17/slides-from-my-erlang-codemotion-talk-available-online/">&#8216;Erlang and the Cloud&#8217; Codemotion slides available online</a>
       </li>
     
       <li class="post">
@@ -145,7 +356,7 @@
 <section>
   <h1>Latest Tweets</h1>
   <ul id="tweets">
-    <li class="loading">Status updating...</li>
+    <li class="loading">Status updating&#8230;</li>
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
@@ -163,7 +374,6 @@
 
   
 </aside>
-
 
     </div>
   </div>

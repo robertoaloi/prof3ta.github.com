@@ -4,7 +4,7 @@
   <title><![CDATA[Roberto Aloi]]></title>
   <link href="http://roberto-aloi.com/atom.xml" rel="self"/>
   <link href="http://roberto-aloi.com/"/>
-  <updated>2012-11-15T17:39:26+01:00</updated>
+  <updated>2012-12-01T16:43:51+01:00</updated>
   <id>http://roberto-aloi.com/</id>
   <author>
     <name><![CDATA[Roberto Aloi]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA['Erlang and the Cloud' Codemotion slides available online]]></title>
+    <link href="http://roberto-aloi.com/blog/2012/11/17/slides-from-my-erlang-codemotion-talk-available-online/"/>
+    <updated>2012-11-17T17:38:00+01:00</updated>
+    <id>http://roberto-aloi.com/blog/2012/11/17/slides-from-my-erlang-codemotion-talk-available-online</id>
+    <content type="html"><![CDATA[<p>The slides from my <em>Erlang and the Cloud</em> talk are now available on <a href="https://speakerdeck.com/robertoaloi/erlang-and-the-cloud" target="_blank">Speakerdeck</a>.</p>
+
+<p>Enjoy.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Codemotion Venice 2012: Erlang and the Cloud]]></title>

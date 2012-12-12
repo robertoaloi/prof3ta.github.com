@@ -9,7 +9,8 @@
   <meta name="author" content="Roberto Aloi">
 
   
-  <meta name="description" content="If the answer is &#8216;yes&#8217;, here is a little script which might allow you to save some time: #!/bin/sh ROOTDIR=`which erl | sed -ne '/^ &hellip;">
+  <meta name="description" content="For example, wouldn&#8217;t it be awesome to have the following: ./efind.sh cover
+tools Well, here is a little script which might allow you to save &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -103,7 +104,13 @@
   </header>
 
 
-<div class="entry-content"><p>If the answer is &#8216;yes&#8217;, here is a little script which might allow you to save some time:</p>
+<div class="entry-content"><p>For example, wouldn&#8217;t it be awesome to have the following:</p>
+
+<pre><code>./efind.sh cover
+tools
+</code></pre>
+
+<p>Well, here is a little script which might allow you to save some time:</p>
 
 <div><script src='https://gist.github.com/4268342.js?file=efind.sh'></script>
 <noscript><pre><code>#!/bin/sh
@@ -112,7 +119,7 @@ ROOTDIR=`which erl | sed -ne '/^ROOTDIR=/s///p'`
 find $ROOTDIR -name $1.erl | awk -F / '{print $(NF-2)}' | awk -F - '{print $1}'</code></pre></noscript></div>
 
 
-
+<p>Enjoy.</p>
 </div>
 
 

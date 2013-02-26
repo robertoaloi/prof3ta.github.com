@@ -4,7 +4,7 @@
   <title><![CDATA[Category: erlang, | Roberto Aloi]]></title>
   <link href="http://roberto-aloi.com/blog/categories/erlang-/atom.xml" rel="self"/>
   <link href="http://roberto-aloi.com/"/>
-  <updated>2013-01-26T16:35:22+01:00</updated>
+  <updated>2013-02-26T12:54:11+01:00</updated>
   <id>http://roberto-aloi.com/</id>
   <author>
     <name><![CDATA[Roberto Aloi]]></name>
@@ -12,6 +12,27 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Erlang Workshop in Rome, Italy]]></title>
+    <link href="http://roberto-aloi.com/blog/2013/02/26/erlang-workshop/"/>
+    <updated>2013-02-26T12:43:00+01:00</updated>
+    <id>http://roberto-aloi.com/blog/2013/02/26/erlang-workshop</id>
+    <content type="html"><![CDATA[<div style="text-align:center">
+<a href="http://rome.codemotionworld.com/workshop/erlang-multi-core-e-massive-scalability/" target="_blank">
+<img style="width:60%" src="http://roberto-aloi.com/images/erlang-workshop.png" alt="Erlang Workshop Codemotion - Rome 2013" />
+</a>
+</div>
+
+
+<br />
+
+
+<p>For the third year in a row, Erlang Solutions will be present at Codemotion, one of the biggest IT conferences in Italy which focuses on innovative programming languages.This year, we propose a one day hands-on workshop on the Erlang programming language. I will hold the workshop in Rome on the 20th March. The workshop is titled"Erlang: multi-core and massive scalability" and it consists of a practical overview of the Erlang programming language.</p>
+
+<p>You can register to the workshop <a href="http://rome.codemotionworld.com/workshop/erlang-multi-core-e-massive-scalability/">here</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Ever wondered which application a given Erlang module belongs to?]]></title>
